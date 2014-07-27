@@ -1,0 +1,11 @@
+User-agent: *   
+
+Disallow: /fonts/
+
+Disallow: /se_eng/    
+
+Disallow: /mission/
+
+Disallow: /sos/
+
+Disallow: /sf_readings/
