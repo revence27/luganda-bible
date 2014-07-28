@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Rhema</title>  
+    <link rel="stylesheet" href="//ajax.googleapis.com/ajax/libs/jqueryui/1.11.0/themes/smoothness/jquery-ui.css" />
+    <link rel="stylesheet" href="/static/stylesheets/rhema.css" />
+  </head>
+  <body>
+    <div id="main">
+      <div id="header">
+        <div id="nom">Rhema</div>
+        <div id="selector"></div>
+      </div>
+      {%  block onlyfront %}
+      <div id="front">
+              <!--  Nice Front. -->
+      </div>
+      {%  endblock  %}
+      <div id="trunk">
+        {%  block stuff %}
+          <div id="info">
+            <form>
+              <select id="bnav" name="book">
+                {%  for bk in passage.books('luganda', book) %}
+                <option{% if bk[2] %} selected="selected"{% endif %} value="{{ bk[0]  }}">{{  bk[1]  }}</option>
+                {%  endfor  %}
+              </select>
+              <input type="submit" value="Read" />
+            </form>
+          </div>
+          <table>
+            <tbody>
+            {%  for verse in verses.list() %}
+              <tr>
+                <td class="verse lug"><div class="wrap">{{  verse['lug'] }}</div></td><td class="mark">{{ verse['chapter'] + 1 }}:{{  verse['verse'] + 1 }}</td><td class="verse eng"><div class="wrap">{{  verse['eng'] }}</div></td>
+              </tr>
+            {%  endfor  %}
+            </tbody>
+          </table>
+        {%  endblock  %}
+      </div>
+      <div id="footer">
+        Rhema &copy; 2014
+      </div>
+    </div>
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.11.0/jquery-ui.min.js"></script>
+    <script src="/static/javascripts/rhema.js"></script>
+  </body>
+</html>

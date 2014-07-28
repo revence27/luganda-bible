@@ -126,11 +126,11 @@ class Bible:
           orm.ORM.store(self.btable, dat, migrations = [(self.version, u'')])
 
 def pmain(argv):
-  if len(argv) < 3:
-    sys.stderr.write('%s bibletable html1 [html2 ...]\r\n' % (argv[0], ))
+  if len(argv) < 4:
+    sys.stderr.write('%s bibletable biblename html1 [html2 ...]\r\n' % (argv[0], ))
     return 1
-  bible = Bible(argv[1], 'fcs', dbname = 'revence', user = 'revence', host = 'localhost')
-  for arg in argv[2:]:
+  bible = Bible(argv[1], argv[2], dbname = 'revence', user = 'revence', host = 'localhost')
+  for arg in argv[3:]:
     with file(arg) as fch:
       bk, chp = re.split(r'\s+', re.sub(r'\D+', ' ', arg).strip())
       bk, chp = int(bk) - 1, int(chp) - 1

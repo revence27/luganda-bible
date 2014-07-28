@@ -1,0 +1,62 @@
+@charset "UTF-8";
+@import url(http://fonts.googleapis.com/css?family=Goudy+Bookletter+1911|Alegreya+Sans:100,400);
+body {
+  font-family: "Goudy Bookletter 1911", serif;
+  font-family: 15pt; }
+  body #main #header {
+    margin-bottom: 1em; }
+    body #main #header #nom {
+      float: left;
+      color: #999;
+      background: #333;
+      font-weight: 100;
+      font-size: 120%;
+      margin: 0.125em;
+      margin-left: 1em;
+      padding: 0.5em;
+      font-family: "Alegreya Sans", "Varela Round";
+      padding-top: 0.25em;
+      padding-bottom: 0.25em;
+      border-radius: 0.25em 0.25em 0.25em 0.25em; }
+      body #main #header #nom:before {
+        content: "✝";
+        color: #cb1714;
+        padding: 0.25em;
+        font-weight: 900; }
+  body #main #trunk {
+    margin: 1em;
+    border: solid 1px #bfbfbf; }
+    body #main #trunk #info {
+      padding-left: 2em;
+      padding-top: 1em;
+      font-weight: 100;
+      color: #e6e8e7;
+      background: #bfbfbf;
+      background: linear-gradient(to top, #bfbfbf, #bfbfbf, #bfbfbf, #e6e8e7);
+      border-top: solid #e6e8e7 1px; }
+      body #main #trunk #info:before {
+        color: black; }
+    body #main #trunk table {
+      margin: 2em;
+      margin-left: 1em;
+      margin-right: 1em;
+      font: inherit;
+      border-collapse: collapse; }
+    body #main #trunk .verse {
+      vertical-align: top;
+      padding-left: 1em;
+      padding-right: 1em; }
+      body #main #trunk .verse .wrap {
+        text-align: justify;
+        text-indent: 1em; }
+    body #main #trunk .lug {
+      width: 61.8%;
+      line-height: 1em; }
+    body #main #trunk .mark {
+      font-size: 61.8%;
+      font-weight: bold; }
+    body #main #trunk .eng {
+      width: 38.2%;
+      font-size: 61.8%; }
+  body #main #footer {
+    text-align: center; }
