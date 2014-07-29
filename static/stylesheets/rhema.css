@@ -65,7 +65,7 @@ body {
       body #main #trunk #info #chapnav {
         font-family: "Alegreya Sans", "Varela Round";
         font-weight: bold;
-        font-size: 75%;
+        font-size: 90%;
         text-align: left;
         color: black; }
         body #main #trunk #info #chapnav .chap {
@@ -91,19 +91,20 @@ body {
       vertical-align: top;
       padding-left: 1em;
       padding-right: 1em;
-      font-size: 80.9%; }
+      font-size: 13pt; }
       body #main #trunk .verse .wrap {
         text-align: justify;
         text-indent: 1em; }
     body #main #trunk .lug {
-      width: 61.8%;
+      width: 61.55%;
       line-height: 1em; }
     body #main #trunk .mark {
       font-size: 61.8%;
+      width: 0.5%;
       font-style: italic; }
     body #main #trunk .eng {
-      width: 38.2%;
-      font-size: 61.8%; }
+      width: 36.2%;
+      font-size: 80.9%; }
   body #main #footer {
     text-align: center;
     font-family: "Alegreya Sans", "Varela Round";

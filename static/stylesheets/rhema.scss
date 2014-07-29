@@ -144,7 +144,7 @@ body
           font-family: $f2;
           //  margin-bottom: 0.5em;
           font-weight: bold;
-          font-size: 75%;
+          font-size: 90%;
           text-align: left;
           color: $colour_dark;
 
@@ -187,7 +187,8 @@ body
         vertical-align: top;
         padding-left: 1em;
         padding-right: 1em;
-        font-size: 100% - ($grsmallpc / 2);
+        //  font-size: 100% - ($grsmallpc / 2);
+        font-size: 13pt;
 
         .wrap
         {
@@ -198,21 +199,22 @@ body
 
       .lug
       {
-        width: $grlargepc;
+        width: $grlargepc - 0.25%;
         line-height: 1em;
       }
 
       .mark
       {
         font-size: $grlargepc;
+        width: 0.5%;
         //  font-weight: bold;
         font-style: italic;
       }
 
       .eng
       {
-        width: $grsmallpc;
-        font-size: $grlargepc;
+        width: $grsmallpc - 2%;
+        font-size: $grlargepc + ($grsmallpc / 2);
       }
     }
 
