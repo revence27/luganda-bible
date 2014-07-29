@@ -101,10 +101,12 @@ body {
     body #main #trunk .mark {
       font-size: 61.8%;
       width: 0.5%;
-      font-style: italic; }
+      vertical-align: top;
+      font-style: italic;
+      font-size: 8pt; }
     body #main #trunk .eng {
       width: 36.2%;
-      font-size: 80.9%; }
+      font-size: 10pt; }
   body #main #footer {
     text-align: center;
     font-family: "Alegreya Sans", "Varela Round";
