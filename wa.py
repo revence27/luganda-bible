@@ -8,13 +8,7 @@ import settings
 import sys
 
 env       = Environment(loader  = FSL('templates'))
-<<<<<<< HEAD
 pair      = [settings.v1, settings.v2]
-=======
-v1        = 'kjv21'
-v2        = 'luganda'
-pair      = [v1, v2]
->>>>>>> 2709b72250ad813b715c08d5e1c5c221d5e86f27
 
 class Passage:
   def __init__(self, btable, *args, **kw):
@@ -24,7 +18,7 @@ class Passage:
     self.default_book = 44
 
   def query(self):
-    return orm.ORM.query(self.btable, {'book = %s':int(self.book or self.default_book)}, sort = ('position', 'ASC'), hooks = {
+    return orm.ORM.query(self.btable, {'chapter = %s':self.chapter, 'book = %s':int(self.book or self.default_book)}, sort = ('position', 'ASC'), hooks = {
         'eng': lambda x, y: (x[pair[0]] or u'').decode('utf-8'),
         'lug': lambda x, y: (x[pair[1]] or u'').decode('utf-8')
       })
@@ -32,7 +26,7 @@ class Passage:
   @property
   def chapter(self):
     chp = self.kw.get('chapter')
-    return int(chp) if chp else chp
+    return int(chp) if chp else 0
 
   def books(self, ver, pos):
     dem = []
@@ -49,16 +43,6 @@ class Passage:
     bk  = self.kw.get('book', self.default_book)
     return int(bk) if bk else bk
 
-  def describe(self):
-    books = [
-      'Genesis',
-      'Exodus',
-      'Leviticus',
-      'Numbers',
-      'Deuteronomy'
-    ]
-    return u'%s %s' % (books[int(self.book)] if self.book else '', self.chapter if self.chapter else '')
-
 class Bible:
   def __init__(self, arg):
     self.btable = arg
@@ -69,12 +53,9 @@ class Bible:
     return env.get_template('index.html').render({
       'passage'   : psg,
       'book'      : psg.book,
+      'chapter'   : psg.chapter,
       'verses'    : psg.query(),
-<<<<<<< HEAD
       'versions'  : pair
-=======
-      'books'     : pair
->>>>>>> 2709b72250ad813b715c08d5e1c5c221d5e86f27
     })
 
 def wmain(argv):

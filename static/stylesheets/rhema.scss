@@ -20,6 +20,17 @@ body
 
   #main
   {
+    a
+    {
+      text-decoration: inherit;
+      color: inherit;
+
+      &:hover, &:visited
+      {
+        color: inherit;
+      }
+    }
+
     #header
     {
       margin-bottom: 1em;
@@ -27,18 +38,11 @@ body
       #nom
       {
         float: left;
-<<<<<<< HEAD
         color: $parchment;
         background: $colour_grey;
         border: solid 1px $rhemared;
         font-weight: 300;
         box-shadow: 3px 3px 10px 3px $parchment;
-=======
-        color: #333;
-        background: #999;
-        border: solid 1px #333;
-        font-weight: 100;
->>>>>>> 2709b72250ad813b715c08d5e1c5c221d5e86f27
         font-size: 120%;
         margin: 0.125em;
         margin-left: 1em;
@@ -47,17 +51,6 @@ body
         padding-top: 0.25em;
         padding-bottom: 0.25em;
         border-radius: 0.25em 0.25em 0.25em 0.25em;
-
-        a
-        {
-          text-decoration: inherit;
-          color: inherit;
-
-          &:hover, &:visited
-          {
-            color: inherit;
-          }
-        }
 
         &:before
         {
@@ -83,29 +76,22 @@ body
     #trunk
     {
       margin: 1em;
-<<<<<<< HEAD
       //  border: solid 1px $colour_grey;
-=======
-      border: solid 1px $colour_grey;
->>>>>>> 2709b72250ad813b715c08d5e1c5c221d5e86f27
       width: $grlargepc;
       margin-left: $grsmallpc / 2.0;
       background: $parchment;
+      padding-bottom: 1em;
 
       #info
       {
         border-radius: 3px 3px 0px 0px;
-        padding-left: 2em;
-        padding-top: 1em;
-<<<<<<< HEAD
-=======
-        font-size: 100% + $grsmallpc;
-        font-weight: 100;
-        color: $colour_light;
->>>>>>> 2709b72250ad813b715c08d5e1c5c221d5e86f27
+        padding: 2em;
+        padding-top: 0.5em;
+        padding-bottom: 0.5em;
         background: $colour_grey;
         background: linear-gradient(to top, $colour_grey, $colour_grey, $colour_grey, $colour_light);
         border-top: solid $colour_light 1px;
+        margin-bottom: 1em;
 
         form
         {
@@ -131,24 +117,57 @@ body
           font-weight: 100;
           font-size: 100% + $grsmallpc;
           color: $parchment;
+
+          .bn
+          {
+            //  text-decoration: underline;
+            //  cursor: pointer;
+            //  margin-right: 0.5em;
+
+            &:hover
+            {
+              //  color: $colour_dark;
+            }
+          }
+
+          .cn
+          {
+            font-style: italic;
+            //  text-decoration: underline;
+            cursor: pointer;
+            //  margin-left: 0.5em;
+          }
         }
 
         #chapnav
         {
           font-family: $f2;
+          //  margin-bottom: 0.5em;
+          font-weight: bold;
           font-size: 75%;
-          text-align: center;
-          background: $colour_light;
+          text-align: left;
           color: $colour_dark;
-
-          &:hover
-          {
-            color: $parchment;
-          }
 
           .chap
           {
             display: inline;
+            //  background: $colour_light;
+            margin-left: 1px;
+            margin-right: 1px;
+            padding-left: 1px;
+            padding-right: 1px;
+            color: $colour_grey;
+            text-shadow: 0px 0px 3px $colour_dark;
+
+            a
+            {
+              color: $colour_light;
+            }
+
+            &:hover
+            {
+              color: $parchment;
+            }
           }
         }
       }
@@ -156,6 +175,7 @@ body
       table
       {
         margin: 2em;
+        margin-top: 0.125em;
         margin-left: 1em;
         margin-right: 1em;
         font: inherit;
@@ -185,7 +205,8 @@ body
       .mark
       {
         font-size: $grlargepc;
-        font-weight: bold;
+        //  font-weight: bold;
+        font-style: italic;
       }
 
       .eng
@@ -198,6 +219,8 @@ body
     #footer
     {
       text-align: center;
+      font-family: $f2;
+      font-size: x-small;
     }
   }
 }

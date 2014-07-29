@@ -1,7 +1,8 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Rhema</title>  
+    {%  set engbk = passage.books(versions[0], book) %}
+    <title>{{  engbk[book][1] }} {{  chapter + 1 }} • Rhema</title>  
     <link rel="stylesheet" href="//ajax.googleapis.com/ajax/libs/jqueryui/1.11.0/themes/smoothness/jquery-ui.css" />
     <link rel="stylesheet" href="/static/stylesheets/rhema.css" />
   </head>
@@ -13,7 +14,7 @@
       </div>
       {%  block onlyfront %}
       <div id="front">
-              <!--  Nice Front. -->
+        <!--  Nice Front. -->
       </div>
       {%  endblock  %}
       <div id="trunk">
@@ -21,35 +22,31 @@
           <div id="info">
             <form>
               <select id="bnav" name="book">
-<<<<<<< HEAD
-                {%  set engbk = passage.books(versions[0], book) %}
                 {%  for bk in passage.books(versions[1], book) %}
-=======
-                {%  set engbk = passage.books(books[0], book) %}
-                {%  for bk in passage.books(books[1], book) %}
->>>>>>> 2709b72250ad813b715c08d5e1c5c221d5e86f27
                 <option{% if bk[2] %} selected="selected"{% endif %} value="{{ bk[0]  }}">{{  bk[1]  }}</option>
                 {%  endfor  %}
               </select>
               <input type="submit" value="Read" />
             </form>
-            <div id="curbook">{{  engbk[book][1] }}</div>
-<<<<<<< HEAD
-            <div id="chapnav">
-              {%  for chap in passage.chapters(versions[0], book)  %}
+            <div id="curbook"><span class="bn">{{  engbk[book][1] }}</span> <span class="cn">{{ chapter + 1 }}</span></div>
+            {%  set chs = passage.chapters(versions[0], book) %}
+            <div id="chapnav" active-book="{{ book  }}" active-chapter="{{  chapter  }}" chapter-count="{{ chs|length  }}">
+              {%  for chap in chs  %}
                 <div class="chap">
-                  {{  chap  }}
+                  {%  if chap == chapter  %}
+                    {{  chap + 1  }}
+                  {%  else  %}
+                    <a href="?book={{ book  }}&chapter={{ chap  }}">{{  chap + 1  }}</a>
+                  {%  endif  %}
                 </div>
               {%  endfor  %}
             </div>
-=======
->>>>>>> 2709b72250ad813b715c08d5e1c5c221d5e86f27
           </div>
           <table>
             <tbody>
             {%  for verse in verses.list() %}
               <tr>
-                <td class="verse lug"><div class="wrap">{{  verse['lug'] }}</div></td><td class="mark">{{ verse['chapter'] + 1 }}:{{  verse['verse'] + 1 }}</td><td class="verse eng"><div class="wrap">{{  verse['eng'] }}</div></td>
+                <td class="verse lug"><div class="wrap">{{  verse['lug'] }}</div></td><td class="mark" id="verse{{  verse['verse'] + 1 }}">{{  verse['verse'] + 1 }}</td><td class="verse eng"><div class="wrap">{{  verse['eng'] }}</div></td>
               </tr>
             {%  endfor  %}
             </tbody>
