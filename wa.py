@@ -7,30 +7,30 @@ import os
 import sys
 
 env       = Environment(loader  = FSL('templates'))
-VERSIONS  = [
-  ('fcs', 'The Free Christian Scriptures'),
-  ('luganda', 'Luganda Bible')
-]
+v1        = 'kjv21'
+v2        = 'luganda'
+pair      = [v1, v2]
 
 class Passage:
   def __init__(self, btable, *args, **kw):
-    self.args   = args
-    self.kw     = kw
-    self.btable = btable
+    self.args         = args
+    self.kw           = kw
+    self.btable       = btable
+    self.default_book = 44
 
   def query(self):
-    return orm.ORM.query(self.btable, {'book = %s':int(self.book or '45')}, sort = ('position', 'ASC'), hooks = {
-        'eng': lambda x, y: (x['fcs'] or u'').decode('utf-8'),
-        'lug': lambda x, y: (x['luganda'] or u'').decode('utf-8')
+    return orm.ORM.query(self.btable, {'book = %s':int(self.book or self.default_book)}, sort = ('position', 'ASC'), hooks = {
+        'eng': lambda x, y: (x[pair[0]] or u'').decode('utf-8'),
+        'lug': lambda x, y: (x[pair[1]] or u'').decode('utf-8')
       })
 
   @property
   def chapter(self):
-    return self.kw.get('chapter')
+    chp = self.kw.get('chapter')
+    return int(chp) if chp else chp
 
   def books(self, ver, pos):
     dem = []
-    pos = int(pos)
     qry = orm.ORM.query('booknames', {'version = %s': ver}, sort = ('position', 'ASC'))
     for bkn in qry.list():
       dem.append((bkn['position'] - 1, bkn['name'], pos == (bkn['position'] - 1)))
@@ -38,7 +38,8 @@ class Passage:
 
   @property
   def book(self):
-    return self.kw.get('book')
+    bk  = self.kw.get('book', self.default_book)
+    return int(bk) if bk else bk
 
   def describe(self):
     books = [
@@ -58,17 +59,18 @@ class Bible:
   def index(self, *args, **kw):
     psg = Passage(self.btable, *args, **kw)
     return env.get_template('index.html').render({
-      'versions'  : VERSIONS,
       'passage'   : psg,
       'book'      : psg.book,
-      'verses'    : psg.query()
+      'verses'    : psg.query(),
+      'books'     : pair
     })
 
 def wmain(argv):
   if len(argv) < 2:
     sys.stderr.write('%s bibletable\n' % (argv[0], ))
     return 1
-  orm.ORM.connect(dbname = 'revence', user = 'revence', host = 'localhost')
+  orm.ORM.connect(dbname = 'revence', user = 'revence')	#
+  cherrypy.server.socket_host = '0.0.0.0'
   cherrypy.quickstart(Bible(argv[1]), '/', {
     '/' : {
       'tools.sessions.on' : True
