@@ -8,7 +8,13 @@ import settings
 import sys
 
 env       = Environment(loader  = FSL('templates'))
+<<<<<<< HEAD
 pair      = [settings.v1, settings.v2]
+=======
+v1        = 'kjv21'
+v2        = 'luganda'
+pair      = [v1, v2]
+>>>>>>> 2709b72250ad813b715c08d5e1c5c221d5e86f27
 
 class Passage:
   def __init__(self, btable, *args, **kw):
@@ -64,7 +70,11 @@ class Bible:
       'passage'   : psg,
       'book'      : psg.book,
       'verses'    : psg.query(),
+<<<<<<< HEAD
       'versions'  : pair
+=======
+      'books'     : pair
+>>>>>>> 2709b72250ad813b715c08d5e1c5c221d5e86f27
     })
 
 def wmain(argv):

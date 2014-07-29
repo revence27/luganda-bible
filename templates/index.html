@@ -21,14 +21,20 @@
           <div id="info">
             <form>
               <select id="bnav" name="book">
+<<<<<<< HEAD
                 {%  set engbk = passage.books(versions[0], book) %}
                 {%  for bk in passage.books(versions[1], book) %}
+=======
+                {%  set engbk = passage.books(books[0], book) %}
+                {%  for bk in passage.books(books[1], book) %}
+>>>>>>> 2709b72250ad813b715c08d5e1c5c221d5e86f27
                 <option{% if bk[2] %} selected="selected"{% endif %} value="{{ bk[0]  }}">{{  bk[1]  }}</option>
                 {%  endfor  %}
               </select>
               <input type="submit" value="Read" />
             </form>
             <div id="curbook">{{  engbk[book][1] }}</div>
+<<<<<<< HEAD
             <div id="chapnav">
               {%  for chap in passage.chapters(versions[0], book)  %}
                 <div class="chap">
@@ -36,6 +42,8 @@
                 </div>
               {%  endfor  %}
             </div>
+=======
+>>>>>>> 2709b72250ad813b715c08d5e1c5c221d5e86f27
           </div>
           <table>
             <tbody>

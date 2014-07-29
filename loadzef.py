@@ -16,7 +16,7 @@ BOOK_NAME_TABLE = [
   ('name', u'')
 ]
 
-orm.ORM.connect(dbname = 'revence', user = 'revence', host = 'localhost')
+orm.ORM.connect(dbname = 'revence', user = 'revence')
 
 def lmain(argv):
   if len(argv) < 3:

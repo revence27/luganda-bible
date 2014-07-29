@@ -27,11 +27,18 @@ body
       #nom
       {
         float: left;
+<<<<<<< HEAD
         color: $parchment;
         background: $colour_grey;
         border: solid 1px $rhemared;
         font-weight: 300;
         box-shadow: 3px 3px 10px 3px $parchment;
+=======
+        color: #333;
+        background: #999;
+        border: solid 1px #333;
+        font-weight: 100;
+>>>>>>> 2709b72250ad813b715c08d5e1c5c221d5e86f27
         font-size: 120%;
         margin: 0.125em;
         margin-left: 1em;
@@ -76,7 +83,11 @@ body
     #trunk
     {
       margin: 1em;
+<<<<<<< HEAD
       //  border: solid 1px $colour_grey;
+=======
+      border: solid 1px $colour_grey;
+>>>>>>> 2709b72250ad813b715c08d5e1c5c221d5e86f27
       width: $grlargepc;
       margin-left: $grsmallpc / 2.0;
       background: $parchment;
@@ -86,6 +97,12 @@ body
         border-radius: 3px 3px 0px 0px;
         padding-left: 2em;
         padding-top: 1em;
+<<<<<<< HEAD
+=======
+        font-size: 100% + $grsmallpc;
+        font-weight: 100;
+        color: $colour_light;
+>>>>>>> 2709b72250ad813b715c08d5e1c5c221d5e86f27
         background: $colour_grey;
         background: linear-gradient(to top, $colour_grey, $colour_grey, $colour_grey, $colour_light);
         border-top: solid $colour_light 1px;

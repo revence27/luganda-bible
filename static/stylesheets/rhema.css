@@ -1,93 +1,71 @@
-@charset "UTF-8";
-@import url(http://fonts.googleapis.com/css?family=Goudy+Bookletter+1911|Alegreya+Sans:100,400);
-body {
-  font-family: "Goudy Bookletter 1911", serif;
-  font-family: 15pt;
-  background: radial-gradient(circle, white, #e6e8e7, #e6e8e7, #bfbfbf) fixed center no-repeat; }
-  body #main #header {
-    margin-bottom: 1em; }
-    body #main #header #nom {
-      float: left;
-      color: white;
-      background: #bfbfbf;
-      border: solid 1px #cb1714;
-      font-weight: 300;
-      box-shadow: 3px 3px 10px 3px white;
-      font-size: 120%;
-      margin: 0.125em;
-      margin-left: 1em;
-      padding: 0.5em;
-      font-family: "Alegreya Sans", "Varela Round";
-      padding-top: 0.25em;
-      padding-bottom: 0.25em;
-      border-radius: 0.25em 0.25em 0.25em 0.25em; }
-      body #main #header #nom a {
-        text-decoration: inherit;
-        color: inherit; }
-        body #main #header #nom a:hover, body #main #header #nom a:visited {
-          color: inherit; }
-      body #main #header #nom:before {
-        content: "✝";
-        color: #cb1714;
-        padding: 0.25em;
-        font-weight: 900;
-        text-shadow: 0px 0px 3px #fce2e2; }
-  body #main #trunk {
-    margin: 1em;
-    width: 61.8%;
-    margin-left: 19.1%;
-    background: white; }
-    body #main #trunk #info {
-      border-radius: 3px 3px 0px 0px;
-      padding-left: 2em;
-      padding-top: 1em;
-      background: #bfbfbf;
-      background: linear-gradient(to top, #bfbfbf, #bfbfbf, #bfbfbf, #e6e8e7);
-      border-top: solid #e6e8e7 1px; }
-      body #main #trunk #info form {
-        float: right;
-        font-family: "Varela Round"; }
-        body #main #trunk #info form select {
-          text-align: center; }
-      body #main #trunk #info:before {
-        color: black; }
-      body #main #trunk #info #curbook {
-        line-height: 1em;
-        font-weight: 100;
-        font-size: 138.2%;
-        color: white; }
-      body #main #trunk #info #chapnav {
-        font-family: "Alegreya Sans", "Varela Round";
-        font-size: 75%;
-        text-align: center;
-        background: #e6e8e7;
-        color: black; }
-        body #main #trunk #info #chapnav:hover {
-          color: white; }
-        body #main #trunk #info #chapnav .chap {
-          display: inline; }
-    body #main #trunk table {
-      margin: 2em;
-      margin-left: 1em;
-      margin-right: 1em;
-      font: inherit;
-      border-collapse: collapse; }
-    body #main #trunk .verse {
-      vertical-align: top;
-      padding-left: 1em;
-      padding-right: 1em;
-      font-size: 80.9%; }
-      body #main #trunk .verse .wrap {
-        text-align: justify;
-        text-indent: 1em; }
-    body #main #trunk .lug {
-      width: 61.8%;
-      line-height: 1em; }
-    body #main #trunk .mark {
-      font-size: 61.8%;
-      font-weight: bold; }
-    body #main #trunk .eng {
-      width: 38.2%;
-      font-size: 61.8%; }
-  body #main #footer {
-    text-align: center; }
+/*
+Syntax error: Invalid CSS after "...   float: left;": expected "}", was "<<<<<<< HEAD"
+        on line 30 of static/stylesheets/rhema.scss
+
+25:       margin-bottom: 1em;
+26: 
+27:       #nom
+28:       {
+29:         float: left;
+30: <<<<<<< HEAD
+31:         color: $parchment;
+32:         background: $colour_grey;
+33:         border: solid 1px $rhemared;
+34:         font-weight: 300;
+35:         box-shadow: 3px 3px 10px 3px $parchment;
+
+Backtrace:
+static/stylesheets/rhema.scss:30
+/Library/Ruby/Gems/2.0.0/gems/sass-3.3.8/lib/sass/scss/parser.rb:1312:in `expected'
+/Library/Ruby/Gems/2.0.0/gems/sass-3.3.8/lib/sass/scss/parser.rb:1248:in `expected'
+/Library/Ruby/Gems/2.0.0/gems/sass-3.3.8/lib/sass/scss/parser.rb:1243:in `tok!'
+/Library/Ruby/Gems/2.0.0/gems/sass-3.3.8/lib/sass/scss/parser.rb:642:in `block'
+/Library/Ruby/Gems/2.0.0/gems/sass-3.3.8/lib/sass/scss/parser.rb:634:in `ruleset'
+/Library/Ruby/Gems/2.0.0/gems/sass-3.3.8/lib/sass/scss/parser.rb:697:in `block in declaration_or_ruleset'
+/Library/Ruby/Gems/2.0.0/gems/sass-3.3.8/lib/sass/scss/parser.rb:1288:in `call'
+/Library/Ruby/Gems/2.0.0/gems/sass-3.3.8/lib/sass/scss/parser.rb:1288:in `rethrow'
+/Library/Ruby/Gems/2.0.0/gems/sass-3.3.8/lib/sass/scss/parser.rb:698:in `declaration_or_ruleset'
+/Library/Ruby/Gems/2.0.0/gems/sass-3.3.8/lib/sass/scss/parser.rb:660:in `block_child'
+/Library/Ruby/Gems/2.0.0/gems/sass-3.3.8/lib/sass/scss/parser.rb:652:in `block_contents'
+/Library/Ruby/Gems/2.0.0/gems/sass-3.3.8/lib/sass/scss/parser.rb:641:in `block'
+/Library/Ruby/Gems/2.0.0/gems/sass-3.3.8/lib/sass/scss/parser.rb:634:in `ruleset'
+/Library/Ruby/Gems/2.0.0/gems/sass-3.3.8/lib/sass/scss/parser.rb:697:in `block in declaration_or_ruleset'
+/Library/Ruby/Gems/2.0.0/gems/sass-3.3.8/lib/sass/scss/parser.rb:1288:in `call'
+/Library/Ruby/Gems/2.0.0/gems/sass-3.3.8/lib/sass/scss/parser.rb:1288:in `rethrow'
+/Library/Ruby/Gems/2.0.0/gems/sass-3.3.8/lib/sass/scss/parser.rb:698:in `declaration_or_ruleset'
+/Library/Ruby/Gems/2.0.0/gems/sass-3.3.8/lib/sass/scss/parser.rb:660:in `block_child'
+/Library/Ruby/Gems/2.0.0/gems/sass-3.3.8/lib/sass/scss/parser.rb:649:in `block_contents'
+/Library/Ruby/Gems/2.0.0/gems/sass-3.3.8/lib/sass/scss/parser.rb:641:in `block'
+/Library/Ruby/Gems/2.0.0/gems/sass-3.3.8/lib/sass/scss/parser.rb:634:in `ruleset'
+/Library/Ruby/Gems/2.0.0/gems/sass-3.3.8/lib/sass/scss/parser.rb:697:in `block in declaration_or_ruleset'
+/Library/Ruby/Gems/2.0.0/gems/sass-3.3.8/lib/sass/scss/parser.rb:1288:in `call'
+/Library/Ruby/Gems/2.0.0/gems/sass-3.3.8/lib/sass/scss/parser.rb:1288:in `rethrow'
+/Library/Ruby/Gems/2.0.0/gems/sass-3.3.8/lib/sass/scss/parser.rb:698:in `declaration_or_ruleset'
+/Library/Ruby/Gems/2.0.0/gems/sass-3.3.8/lib/sass/scss/parser.rb:660:in `block_child'
+/Library/Ruby/Gems/2.0.0/gems/sass-3.3.8/lib/sass/scss/parser.rb:652:in `block_contents'
+/Library/Ruby/Gems/2.0.0/gems/sass-3.3.8/lib/sass/scss/parser.rb:641:in `block'
+/Library/Ruby/Gems/2.0.0/gems/sass-3.3.8/lib/sass/scss/parser.rb:634:in `ruleset'
+/Library/Ruby/Gems/2.0.0/gems/sass-3.3.8/lib/sass/scss/parser.rb:659:in `block_child'
+/Library/Ruby/Gems/2.0.0/gems/sass-3.3.8/lib/sass/scss/parser.rb:652:in `block_contents'
+/Library/Ruby/Gems/2.0.0/gems/sass-3.3.8/lib/sass/scss/parser.rb:116:in `stylesheet'
+/Library/Ruby/Gems/2.0.0/gems/sass-3.3.8/lib/sass/scss/parser.rb:41:in `parse'
+/Library/Ruby/Gems/2.0.0/gems/sass-3.3.8/lib/sass/engine.rb:409:in `_to_tree'
+/Library/Ruby/Gems/2.0.0/gems/sass-3.3.8/lib/sass/engine.rb:274:in `render'
+/Library/Ruby/Gems/2.0.0/gems/sass-3.3.8/lib/sass/plugin/compiler.rb:378:in `update_stylesheet'
+/Library/Ruby/Gems/2.0.0/gems/sass-3.3.8/lib/sass/plugin/compiler.rb:189:in `block in update_stylesheets'
+/Library/Ruby/Gems/2.0.0/gems/sass-3.3.8/lib/sass/plugin/compiler.rb:186:in `each'
+/Library/Ruby/Gems/2.0.0/gems/sass-3.3.8/lib/sass/plugin/compiler.rb:186:in `update_stylesheets'
+/Library/Ruby/Gems/2.0.0/gems/sass-3.3.8/lib/sass/plugin/compiler.rb:357:in `on_file_changed'
+/Library/Ruby/Gems/2.0.0/gems/sass-3.3.8/lib/sass/plugin/compiler.rb:250:in `block in watch'
+/Library/Ruby/Gems/2.0.0/gems/sass-3.3.8/vendor/listen/lib/listen/listener.rb:252:in `call'
+/Library/Ruby/Gems/2.0.0/gems/sass-3.3.8/vendor/listen/lib/listen/listener.rb:252:in `on_change'
+/Library/Ruby/Gems/2.0.0/gems/sass-3.3.8/vendor/listen/lib/listen/listener.rb:290:in `block in initialize_adapter'
+/Library/Ruby/Gems/2.0.0/gems/sass-3.3.8/vendor/listen/lib/listen/adapter.rb:254:in `call'
+/Library/Ruby/Gems/2.0.0/gems/sass-3.3.8/vendor/listen/lib/listen/adapter.rb:254:in `report_changes'
+/Library/Ruby/Gems/2.0.0/gems/sass-3.3.8/vendor/listen/lib/listen/adapter.rb:323:in `poll_changed_directories'
+/Library/Ruby/Gems/2.0.0/gems/sass-3.3.8/vendor/listen/lib/listen/adapter.rb:299:in `block in start_poller'
+*/
+body:before {
+  white-space: pre;
+  font-family: monospace;
+  content: "Syntax error: Invalid CSS after \"...   float: left;\": expected \"}\", was \"<<<<<<< HEAD\"\A         on line 30 of static/stylesheets/rhema.scss\A \A 25:       margin-bottom: 1em;\A 26: \A 27:       #nom\A 28:       {\A 29:         float: left;\A 30: <<<<<<< HEAD\A 31:         color: $parchment;\A 32:         background: $colour_grey;\A 33:         border: solid 1px $rhemared;\A 34:         font-weight: 300;\A 35:         box-shadow: 3px 3px 10px 3px $parchment;"; }
