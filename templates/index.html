@@ -8,7 +8,7 @@
   <body>
     <div id="main">
       <div id="header">
-        <div id="nom">Rhema</div>
+        <div id="nom"><a href="/">Rhema</a></div>
         <div id="selector"></div>
       </div>
       {%  block onlyfront %}
@@ -21,12 +21,21 @@
           <div id="info">
             <form>
               <select id="bnav" name="book">
-                {%  for bk in passage.books('luganda', book) %}
+                {%  set engbk = passage.books(versions[0], book) %}
+                {%  for bk in passage.books(versions[1], book) %}
                 <option{% if bk[2] %} selected="selected"{% endif %} value="{{ bk[0]  }}">{{  bk[1]  }}</option>
                 {%  endfor  %}
               </select>
               <input type="submit" value="Read" />
             </form>
+            <div id="curbook">{{  engbk[book][1] }}</div>
+            <div id="chapnav">
+              {%  for chap in passage.chapters(versions[0], book)  %}
+                <div class="chap">
+                  {{  chap  }}
+                </div>
+              {%  endfor  %}
+            </div>
           </div>
           <table>
             <tbody>

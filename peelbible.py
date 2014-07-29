@@ -136,7 +136,7 @@ def pmain(argv):
       bk, chp = int(bk) - 1, int(chp) - 1
       book    = bible[bk]
       content = html.fromstring(fch.read())
-      title   = content.cssselect('TITLE')[0].text.split('/')[-1]
+      title   = re.sub(r'\d+$', '', content.cssselect('TITLE')[0].text.split('/')[-1].strip()).strip()
       if not book:
         book      = Book(title)
         bible[bk] = book

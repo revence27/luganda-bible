@@ -2,14 +2,17 @@
 @import url(http://fonts.googleapis.com/css?family=Goudy+Bookletter+1911|Alegreya+Sans:100,400);
 body {
   font-family: "Goudy Bookletter 1911", serif;
-  font-family: 15pt; }
+  font-family: 15pt;
+  background: radial-gradient(circle, white, #e6e8e7, #e6e8e7, #bfbfbf) fixed center no-repeat; }
   body #main #header {
     margin-bottom: 1em; }
     body #main #header #nom {
       float: left;
-      color: #999;
-      background: #333;
-      font-weight: 100;
+      color: white;
+      background: #bfbfbf;
+      border: solid 1px #cb1714;
+      font-weight: 300;
+      box-shadow: 3px 3px 10px 3px white;
       font-size: 120%;
       margin: 0.125em;
       margin-left: 1em;
@@ -18,24 +21,51 @@ body {
       padding-top: 0.25em;
       padding-bottom: 0.25em;
       border-radius: 0.25em 0.25em 0.25em 0.25em; }
+      body #main #header #nom a {
+        text-decoration: inherit;
+        color: inherit; }
+        body #main #header #nom a:hover, body #main #header #nom a:visited {
+          color: inherit; }
       body #main #header #nom:before {
         content: "✝";
         color: #cb1714;
         padding: 0.25em;
-        font-weight: 900; }
+        font-weight: 900;
+        text-shadow: 0px 0px 3px #fce2e2; }
   body #main #trunk {
     margin: 1em;
-    border: solid 1px #bfbfbf; }
+    width: 61.8%;
+    margin-left: 19.1%;
+    background: white; }
     body #main #trunk #info {
+      border-radius: 3px 3px 0px 0px;
       padding-left: 2em;
       padding-top: 1em;
-      font-weight: 100;
-      color: #e6e8e7;
       background: #bfbfbf;
       background: linear-gradient(to top, #bfbfbf, #bfbfbf, #bfbfbf, #e6e8e7);
       border-top: solid #e6e8e7 1px; }
+      body #main #trunk #info form {
+        float: right;
+        font-family: "Varela Round"; }
+        body #main #trunk #info form select {
+          text-align: center; }
       body #main #trunk #info:before {
         color: black; }
+      body #main #trunk #info #curbook {
+        line-height: 1em;
+        font-weight: 100;
+        font-size: 138.2%;
+        color: white; }
+      body #main #trunk #info #chapnav {
+        font-family: "Alegreya Sans", "Varela Round";
+        font-size: 75%;
+        text-align: center;
+        background: #e6e8e7;
+        color: black; }
+        body #main #trunk #info #chapnav:hover {
+          color: white; }
+        body #main #trunk #info #chapnav .chap {
+          display: inline; }
     body #main #trunk table {
       margin: 2em;
       margin-left: 1em;
@@ -45,7 +75,8 @@ body {
     body #main #trunk .verse {
       vertical-align: top;
       padding-left: 1em;
-      padding-right: 1em; }
+      padding-right: 1em;
+      font-size: 80.9%; }
       body #main #trunk .verse .wrap {
         text-align: justify;
         text-indent: 1em; }

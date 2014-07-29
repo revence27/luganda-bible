@@ -32,10 +32,15 @@ def lmain(argv):
         for book in bible.cssselect('BIBLEBOOK'):
           bps = bps + 1
           bkn = unicode(book.get('bname')).strip()
-          ftc = orm.ORM.query('booknames', {'version = %s':bname, 'position = %s': bps}, migrations = BOOK_NAME_TABLE)
+          ftc = orm.ORM.query('booknames', {'version = %s':bname, 'position = %s': bps - 1}, migrations = BOOK_NAME_TABLE)
+          chs = 0
+          bki = None
           if not ftc.count():
-            orm.ORM.store('booknames', {'name':bkn, 'version':bname, 'position':bps})
+            bki = orm.ORM.store('booknames', {'name':bkn, 'version':bname, 'position':bps - 1})
+          else:
+            bki = ftc[0]['indexcol']
           for chapter in book.cssselect('CHAPTER'):
+            chs = chs + 1
             for verse in chapter.cssselect('VERS'):
               pos = pos + 1
               vnm = int(verse.get('vnumber')) - 1
@@ -63,6 +68,7 @@ def lmain(argv):
                 # sys.stderr.write(('\r' + gat.query))
                 dat['indexcol'] = it['indexcol']
               orm.ORM.store(argv[1], dat, migrations = [(bname, u'')])
+          orm.ORM.store('booknames', {'indexcol':bki, 'chapters':chs})
 
 if __name__ == '__main__':
   sys.exit(lmain(sys.argv))
