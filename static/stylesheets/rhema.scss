@@ -1,14 +1,18 @@
 @import url(http://fonts.googleapis.com/css?family=Goudy+Bookletter+1911|Alegreya+Sans:100,400);
 
 $f0:   "Cinzel Decorative";
-$f1:            /*"Alegreya",*/ "Goudy Bookletter 1911", serif;
+$f1:            /*"Liberation Serif", "PT Sans", "Quattrocento Roman", "Alegreya", */"Goudy Bookletter 1911", serif;
 $f2:            "Alegreya Sans", "Varela Round";
 $f3:            "Varela Round";
 $grlargepc:     61.8%;
 $grsmallpc:     100.0% - $grlargepc;
-$colour_dark:   rgb(0, 0, 0);
+$colour_black:  rgb(10, 6, 6);
+$colour_dark:   $colour_black;//  rgb(255, 0, 0);
 $colour_light:  rgb(230, 232, 231);
-$colour_grey:   lighten($colour_dark, 75%);
+$colour_pink:   lighten($colour_dark, 75%);
+$colour_grey:   lighten(rgb(0, 0, 0), 75%);
+$info_colour:   $colour_pink;
+$info_colour:   darken($colour_grey, 15%);
 $rhemared:      rgb(203, 23, 20);
 $parchment:     lighten($colour_light, 10%);
 $mainbg:  radial-gradient(circle, $parchment, $colour_light, $colour_light, $colour_grey) fixed center no-repeat;
@@ -16,8 +20,10 @@ $mainbg:  radial-gradient(circle, $parchment, $colour_light, $colour_light, $col
 body
 {
   font-family: $f1;
-  font-family: 15pt;
+  font-size: 15pt;
+  font-variant-settings: "dlig", "diag";
   background: $mainbg;
+  color: $colour_black;
 
   #main
   {
@@ -81,7 +87,7 @@ body
       width: $grlargepc;
       margin-left: $grsmallpc / 2.0;
       background: $parchment;
-      padding-bottom: 1em;
+      padding-bottom: 0.5em;
 
       #info
       {
@@ -89,19 +95,31 @@ body
         padding: 2em;
         padding-top: 0.5em;
         padding-bottom: 0.5em;
-        background: $colour_grey;
-        background: linear-gradient(to top, $colour_grey, $colour_grey, $colour_grey, $colour_light);
+        background: linear-gradient(to top, $info_colour, $info_colour, $info_colour, $colour_light);
         border-top: solid $colour_light 1px;
         margin-bottom: 1em;
+        box-shadow: 0px 1px 2px $colour_dark;
 
         form
         {
           float: right;
-          font-family: $f3;
+          font-family: $f2;
 
           select
           {
             text-align: center;
+            font-size: 9pt;
+            font-family: $f2;
+
+            option
+            {
+              //  font-family: $f2;
+            }
+          }
+
+          input
+          {
+            font-family: $f2;
           }
         }
 
@@ -179,6 +197,7 @@ body
         margin-top: 0.125em;
         margin-left: 1em;
         margin-right: 1em;
+        margin-bottom: 0em;
         font: inherit;
         border-collapse: collapse;
       }
@@ -220,6 +239,7 @@ body
         width: $grsmallpc - 2%;
         //  font-size: $grlargepc + ($grsmallpc / 2);
         font-size: 10pt;
+        line-height: 1em;
       }
     }
 
