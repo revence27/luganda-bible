@@ -56,10 +56,10 @@ class Book:
 
 class Bible:
   def __init__(self, btable, version, *args, **kw):
+    orm.ORM.connect(*args, **kw)
     self.books    = ComfortableList()
     self.version  = version
     self.btable   = btable
-    orm.ORM.connect(*args, **kw)
 
   def __getitem__(self, ix):
     return self.books[ix]
@@ -70,12 +70,19 @@ class Bible:
   def append(self, vs):
     self.books.append(vs)
 
+  def load_names(self):
+    dem = []
+    for bn in orm.ORM.query('booknames', "SELECT * FROM booknames WHERE version = 'luganda' ORDER BY position ASC").list():
+      dem.append(bn['name'])
+    return dem
+
   def zefania(self):
+    names = self.load_names()
     bible = E('XMLBIBLE', biblename = self.version)
     bix = 0
     for book in self.books:
       bix = bix + 1
-      bk  = E('BIBLEBOOK', bname = book.name, bnumber = str(bix))
+      bk  = E('BIBLEBOOK', bname = names[bix - 1], bnumber = str(bix))
       cix = 0
       if not book:
         raise Exception, ('Missing book: %d\n' % (bix, ))

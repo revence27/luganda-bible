@@ -158,11 +158,12 @@ body
             vertical-align: top;
             line-height: 0.75em;
             margin-top: 0px;
+            font-weight: 300;
             margin-bottom: 0.125em;
             font-size: $grlargepc;
             font-family: $f2;
-            color: darken($colour_grey, 50%);
-            text-shadow: -1px 1px 1px darken($colour_grey, 60%);
+            color: darken($colour_grey, 60%);
+            text-shadow: -1px 1px 2px darken($colour_grey, 70%);
             letter-spacing: 0.125em;
           }
 
