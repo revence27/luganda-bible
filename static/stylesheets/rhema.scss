@@ -149,6 +149,23 @@ body
             }
           }
 
+          .bn2
+          {
+            display: block;
+            //  margin-top: 1em;
+            //  float: left;
+            //  margin-left: 0.75em;
+            vertical-align: top;
+            line-height: 0.75em;
+            margin-top: 0px;
+            margin-bottom: 0.125em;
+            font-size: $grlargepc;
+            font-family: $f2;
+            color: darken($colour_grey, 50%);
+            text-shadow: -1px 1px 1px darken($colour_grey, 60%);
+            letter-spacing: 0.125em;
+          }
+
           .cn
           {
             font-style: italic;

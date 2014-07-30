@@ -65,6 +65,17 @@ body {
         font-weight: 100;
         font-size: 138.2%;
         color: white; }
+        body #main #trunk #info #curbook .bn2 {
+          display: block;
+          vertical-align: top;
+          line-height: 0.75em;
+          margin-top: 0px;
+          margin-bottom: 0.125em;
+          font-size: 61.8%;
+          font-family: "Alegreya Sans SC", "Varela Round";
+          color: #404040;
+          text-shadow: -1px 1px 1px #262626;
+          letter-spacing: 0.125em; }
         body #main #trunk #info #curbook .cn {
           font-style: italic;
           cursor: pointer; }

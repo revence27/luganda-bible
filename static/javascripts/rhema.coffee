@@ -1,8 +1,18 @@
 $(() ->
   # workChapterNav()
   # workBookNav()
+  newerBookNav()
   null
 )
+
+newerBookNav = () ->
+  sel = $('#bnav')
+  frm = $(sel.parent('form'))
+  but = $($('input[type="submit"]', frm)[0])
+  but.hide()
+  sel.change((evt) ->
+    document.location = "?book=#{$(this).val()}"
+  )
 
 workBookNav = () ->
   crb = $('#curbook')
@@ -12,11 +22,11 @@ workBookNav = () ->
     dem = []
     for ent, ix in $('option', bnv)
       it  = $(ent)
-      # dem.push(
-      #   text:     it.text()
-      #   pos:      ix
-      #   selected: it.attr('selected') == 'selected'
-      # )
+      dem.push(
+        text:     it.text()
+        pos:      ix
+        selected: it.attr('selected') == 'selected'
+      )
       dem.push(it.text())
     inp = $('<input style="font: inherit" type="text" />')
     inp.attr('placeholder', bkn.text())

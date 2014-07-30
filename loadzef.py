@@ -39,6 +39,8 @@ def lmain(argv):
             bki = orm.ORM.store('booknames', {'name':bkn, 'version':bname, 'position':bps - 1})
           else:
             bki = ftc[0]['indexcol']
+            if ftc[0]['name'] != bkn:
+              orm.ORM.store('booknames', {'name':bkn, 'indexcol':bki})
           for chapter in book.cssselect('CHAPTER'):
             chs = chs + 1
             for verse in chapter.cssselect('VERS'):
