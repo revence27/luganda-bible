@@ -1,5 +1,6 @@
 @import url(http://fonts.googleapis.com/css?family=Goudy+Bookletter+1911|Alegreya+Sans:100,400);
 
+$f0:   "Cinzel Decorative";
 $f1:            /*"Alegreya",*/ "Goudy Bookletter 1911", serif;
 $f2:            "Alegreya Sans", "Varela Round";
 $f3:            "Varela Round";
@@ -43,11 +44,11 @@ body
         border: solid 1px $rhemared;
         font-weight: 300;
         box-shadow: 3px 3px 10px 3px $parchment;
-        font-size: 120%;
+        font-size: 20pt;
         margin: 0.125em;
         margin-left: 1em;
         padding: 0.5em;
-        font-family: $f2;
+        font-family: $f0;
         padding-top: 0.25em;
         padding-bottom: 0.25em;
         border-radius: 0.25em 0.25em 0.25em 0.25em;
@@ -205,6 +206,7 @@ body
 
       .mark
       {
+        font-family: $f2;
         font-size: $grlargepc;
         width: 0.5%;
         vertical-align: top;

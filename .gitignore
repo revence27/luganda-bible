@@ -1,4 +1,5 @@
 .*.swp
+*.pyc
 .sass-cache/
 settings.py
 *.xml

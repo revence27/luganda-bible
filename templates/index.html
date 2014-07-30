@@ -2,14 +2,14 @@
 <html>
   <head>
     {%  set engbk = passage.books(versions[0], book) %}
-    <title>{{  engbk[book][1] }} {{  chapter + 1 }} • Rhema</title>  
+    <title>{{  engbk[book][1] }} {{  chapter + 1 }} • {{  appname }}</title>  
     <link rel="stylesheet" href="//ajax.googleapis.com/ajax/libs/jqueryui/1.11.0/themes/smoothness/jquery-ui.css" />
     <link rel="stylesheet" href="/static/stylesheets/rhema.css" />
   </head>
   <body>
     <div id="main">
       <div id="header">
-        <div id="nom"><a href="/">Rhema</a></div>
+        <div id="nom"><a href="/">{{  appname.replace("\n", "<br />") }}</a></div>
         <div id="selector"></div>
       </div>
       {%  block onlyfront %}
@@ -54,7 +54,7 @@
         {%  endblock  %}
       </div>
       <div id="footer">
-        Rhema &copy; 2014
+        {{  appname }} &copy; 2015
       </div>
     </div>
     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>

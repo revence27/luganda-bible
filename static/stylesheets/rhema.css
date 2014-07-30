@@ -18,11 +18,11 @@ body {
       border: solid 1px #cb1714;
       font-weight: 300;
       box-shadow: 3px 3px 10px 3px white;
-      font-size: 120%;
+      font-size: 20pt;
       margin: 0.125em;
       margin-left: 1em;
       padding: 0.5em;
-      font-family: "Alegreya Sans", "Varela Round";
+      font-family: "Cinzel Decorative";
       padding-top: 0.25em;
       padding-bottom: 0.25em;
       border-radius: 0.25em 0.25em 0.25em 0.25em; }
@@ -99,6 +99,7 @@ body {
       width: 61.55%;
       line-height: 1em; }
     body #main #trunk .mark {
+      font-family: "Alegreya Sans", "Varela Round";
       font-size: 61.8%;
       width: 0.5%;
       vertical-align: top;

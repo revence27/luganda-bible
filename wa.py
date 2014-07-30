@@ -44,14 +44,16 @@ class Passage:
     return int(bk) if bk else bk
 
 class Bible:
-  def __init__(self, arg):
+  def __init__(self, arg, nom):
     self.btable = arg
+    self.bname  = nom
 
   @cherrypy.expose
   def index(self, *args, **kw):
     psg = Passage(self.btable, *args, **kw)
     return env.get_template('index.html').render({
       'passage'   : psg,
+      'appname'   : self.bname,
       'book'      : psg.book,
       'chapter'   : psg.chapter,
       'verses'    : psg.query(),
@@ -59,12 +61,21 @@ class Bible:
     })
 
 def wmain(argv):
-  if len(argv) < 2:
-    sys.stderr.write('%s bibletable\n' % (argv[0], ))
-    return 1
+  apn = None
+  if len(argv) < 3:
+    try:
+      apn = settings.appname
+      if len(argv) < 2:
+        sys.stderr.write('%s bibletable [appname]\n' % (argv[0], ))
+        return 1
+    except:
+      sys.stderr.write('%s bibletable [appname]\n\nIf appname is not provided in settings.appname, then pass it in as an arg.' % (argv[0], ))
+      return 2
+  else:
+    apn = argv[2]
   orm.ORM.connect(dbname = 'revence', user = 'revence')	#
   cherrypy.server.socket_host = '0.0.0.0'
-  cherrypy.quickstart(Bible(argv[1]), '/', {
+  cherrypy.quickstart(Bible(argv[1], apn), '/', {
     '/' : {
       'tools.sessions.on' : True
     },
