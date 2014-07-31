@@ -3,6 +3,7 @@
 from lxml import html
 from ectomorph import orm
 import sys
+import settings
 
 BIBLE_TABLE = [
   ('book',      0),

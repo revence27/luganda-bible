@@ -5,6 +5,7 @@ from lxml import html
 from lxml.builder import E
 import re
 import sys
+import settings
 
 BIBLE_TABLE = [
   ('book',      0),

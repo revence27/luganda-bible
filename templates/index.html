@@ -2,9 +2,11 @@
 <html>
   <head>
     {%  set engbk = passage.books(versions[0], book) %}
-    <title>{{  engbk[book][1] }} {{  chapter + 1 }} • {{  appname }}</title>  
+    {%  set lugbk = passage.books(versions[1], book) %}
+    <title>{{  engbk[book][1] }} {{  chapter + 1 }} • {{  appname }} • {{ lugbk[book][0] }}</title>  
     <link rel="stylesheet" href="//ajax.googleapis.com/ajax/libs/jqueryui/1.11.0/themes/smoothness/jquery-ui.css" />
     <link rel="stylesheet" href="/static/stylesheets/rhema.css" />
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
   </head>
   <body>
     <div id="main">
@@ -22,13 +24,13 @@
           <div id="info">
             <form>
               <select id="bnav" name="book">
-                {%  for bk in passage.books(versions[1], book) %}
+                {%  for bk in lugbk %}
                   <option{% if bk[2] %} selected="selected"{% endif %} value="{{ bk[0]  }}">{{  bk[1]  }} &mdash; {{  engbk[loop.index - 1][1]}}</option>
                 {%  endfor  %}
               </select>
               <input type="submit" value="Read" />
             </form>
-            <div id="curbook"><span class="bn">{{  engbk[book][1] }}</span> <span class="cn">{{ chapter + 1 }}</span><span class="bn2">{{ passage.books(versions[1], book)[book][1] }}</span></div>
+            <div id="curbook"><span class="bn">{{  engbk[book][1] }}</span> <span class="cn">{{ chapter + 1 }}</span><span class="bn2">{{ lugbk[book][1] }}</span></div>
             {%  set chs = passage.chapters(versions[0], book) %}
             <div id="chapnav" active-book="{{ book  }}" active-chapter="{{  chapter  }}" chapter-count="{{ chs|length  }}">
               {%  for chap in chs  %}
