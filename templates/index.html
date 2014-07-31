@@ -3,7 +3,8 @@
   <head>
     {%  set engbk = passage.books(versions[0], book) %}
     {%  set lugbk = passage.books(versions[1], book) %}
-    <title>{{  engbk[book][1] }} {{  chapter + 1 }} • {{  appname }} • {{ lugbk[book][0] }}</title>  
+    {%  set thech = chapter + 1 %}
+    <title>{{  engbk[book][1] }} • {{  thech }} • {{ lugbk[book][1] }}</title>  
     <link rel="stylesheet" href="//ajax.googleapis.com/ajax/libs/jqueryui/1.11.0/themes/smoothness/jquery-ui.css" />
     <link rel="stylesheet" href="/static/stylesheets/rhema.css" />
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
