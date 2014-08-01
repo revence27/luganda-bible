@@ -4,7 +4,7 @@
     {%  set engbk = passage.books(versions[0], book) %}
     {%  set lugbk = passage.books(versions[1], book) %}
     {%  set thech = chapter + 1 %}
-    <title>{{  engbk[book][1] }} • {{  thech }} • {{ lugbk[book][1] }}</title>  
+    <title>{{  lugbk[book][1] }} • {{  thech }} • {{ engbk[book][1] }}</title>  
     <link rel="stylesheet" href="//ajax.googleapis.com/ajax/libs/jqueryui/1.11.0/themes/smoothness/jquery-ui.css" />
     <link rel="stylesheet" href="/static/stylesheets/rhema.css" />
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
@@ -31,7 +31,7 @@
               </select>
               <input type="submit" value="Read" />
             </form>
-            <div id="curbook"><span class="bn">{{  engbk[book][1] }}</span> <span class="cn">{{ chapter + 1 }}</span><span class="bn2">{{ lugbk[book][1] }}</span></div>
+            <div id="curbook"><span class="bn">{{  lugbk[book][1] }}</span> <span class="cn">{{ chapter + 1 }}</span><span class="bn2">{{ engbk[book][1] }}</span></div>
             {%  set chs = passage.chapters(versions[0], book) %}
             <div id="chapnav" active-book="{{ book  }}" active-chapter="{{  chapter  }}" chapter-count="{{ chs|length  }}">
               {%  for chap in chs  %}
@@ -57,7 +57,7 @@
         {%  endblock  %}
       </div>
       <div id="footer">
-        {{  appname }} &copy; 2015
+        {{  appname }} &copy; 2014
       </div>
     </div>
     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
