@@ -1,5 +1,5 @@
 @charset "UTF-8";
-@import url(http://fonts.googleapis.com/css?family=Goudy+Bookletter+1911|Alegreya+Sans+SC:100,400);
+@import url(http://fonts.googleapis.com/css?family=Goudy+Bookletter+1911|Alegreya+Sans+SC:100,400|Lato:300,400,700,900,300italic,400italic,700italic,900italic);
 body {
   font-family: "Goudy Bookletter 1911", serif;
   font-size: 15pt;
@@ -34,6 +34,21 @@ body {
         padding: 0.25em;
         font-weight: 900;
         text-shadow: 0px 0px 3px #fce2e2; }
+    body #main #header #selectors {
+      content: "";
+      margin-top: 7em;
+      float: right;
+      font-size: 10.5pt;
+      background: rgba(255, 255, 255, 0.7);
+      width: 14.1%;
+      font-family: "Lato", "Varela Round";
+      font-weight: 400;
+      letter-spacing: 1px;
+      text-align: right;
+      padding-right: 1%;
+      margin-right: 0.5%;
+      border: white solid 2px;
+      border-radius: 3px 3px 3px 3px; }
   body #main #trunk {
     margin: 1em;
     width: 61.8%;
@@ -85,7 +100,8 @@ body {
         font-weight: bold;
         font-size: 90%;
         text-align: left;
-        color: #0a0606; }
+        color: #0a0606;
+        line-height: 1em; }
         body #main #trunk #info #chapnav .chap {
           display: inline;
           margin-left: 1px;
@@ -96,8 +112,21 @@ body {
           text-shadow: 0px 0px 3px #0a0606; }
           body #main #trunk #info #chapnav .chap a {
             color: #e6e8e7; }
-          body #main #trunk #info #chapnav .chap:hover {
+          body #main #trunk #info #chapnav .chap:hover, body #main #trunk #info #chapnav .chap a:hover {
             color: white; }
+        body #main #trunk #info #chapnav #curchap {
+          border: none;
+          border-bottom: rgba(255, 255, 255, 0);
+          box-shadow: 0px 0px 4px white;
+          padding-left: 0.25em;
+          padding-right: 0.25em;
+          text-shadow: none;
+          color: #0a0606;
+          border-radius: 0.5em 0.5em 0.125em 0.125em; }
+          body #main #trunk #info #chapnav #curchap a {
+            color: #0a0606; }
+            body #main #trunk #info #chapnav #curchap a:hover, body #main #trunk #info #chapnav #curchap a:visited {
+              color: #0a0606; }
     body #main #trunk table {
       margin: 2em;
       margin-top: 0.125em;

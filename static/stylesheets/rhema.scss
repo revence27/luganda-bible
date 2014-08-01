@@ -1,20 +1,24 @@
-@import url(http://fonts.googleapis.com/css?family=Goudy+Bookletter+1911|Alegreya+Sans+SC:100,400);
+@import url(http://fonts.googleapis.com/css?family=Goudy+Bookletter+1911|Alegreya+Sans+SC:100,400|Lato:300,400,700,900,300italic,400italic,700italic,900italic);
 
 $f0:   "Cinzel Decorative";
 $f1:            /*"Liberation Serif", "PT Sans", "Quattrocento Roman", "Alegreya", */"Goudy Bookletter 1911", serif;
 $f2:            "Alegreya Sans SC", "Varela Round";
-$f3:            "Varela Round";
+$f3:            "Lato", "Varela Round";
 $grlargepc:     61.8%;
 $grsmallpc:     100.0% - $grlargepc;
 $colour_black:  rgb(10, 6, 6);
 $colour_dark:   $colour_black;//  rgb(255, 0, 0);
 $colour_light:  rgb(230, 232, 231);
+$faded_colour_light:  rgb(230, 232, 231);
+$bare_display: rgba(230, 232, 231, 0.7);
 $colour_pink:   lighten($colour_dark, 75%);
 $colour_grey:   lighten(rgb(0, 0, 0), 75%);
 $info_colour:   $colour_pink;
 $info_colour:   darken($colour_grey, 15%);
 $rhemared:      rgb(203, 23, 20);
 $parchment:     lighten($colour_light, 10%);
+$faded_parchment:     lighten($faded_colour_light, 10%);
+$bare_parchment:  lighten($bare_display, 10%);
 $mainbg:  radial-gradient(circle, $parchment, $colour_light, $colour_light, $colour_grey) fixed center no-repeat;
 
 body
@@ -69,9 +73,22 @@ body
         }
       }
 
-      #selector
+      #selectors
       {
-
+        content: "";
+        margin-top: 7em;
+        float: right;
+        font-size: 10.5pt;
+        background: $bare_parchment;
+        width: ($grsmallpc / 2) - 5%;
+        font-family: $f3;
+        font-weight: 400;
+        letter-spacing: 1px;
+        text-align: right;
+        padding-right: 1%;
+        margin-right: 0.5%;
+        border: $parchment solid 2px;
+        border-radius: 3px 3px 3px 3px;
       }
     }
 
@@ -184,6 +201,7 @@ body
           font-size: 90%;
           text-align: left;
           color: $colour_dark;
+          line-height: 1em;
 
           .chap
           {
@@ -201,9 +219,34 @@ body
               color: $colour_light;
             }
 
-            &:hover
+            &:hover, a:hover
             {
               color: $parchment;
+            }
+          }
+
+          #curchap
+          {
+            border: none;
+            border-bottom: rgba(255, 255, 255, 0.0);
+            //  background: linear-gradient(to bottom, darken($parchment, 50%), $parchment, $parchment, $faded_parchment);
+            //  background: radial-gradient(circle, $parchment, $parchment, $parchment, $colour_grey, $colour_dark);
+            //  background: $faded_parchment;
+            box-shadow: 0px 0px 4px $parchment;
+            padding-left: 0.25em;
+            padding-right: 0.25em;
+            text-shadow: none;
+            color: $colour_dark;
+            border-radius: 0.5em 0.5em 0.125em 0.125em;
+
+            a
+            {
+              color: $colour_dark;
+
+              &:hover, &:visited
+              {
+                color: $colour_dark;
+              }
             }
           }
         }

@@ -47,11 +47,12 @@ class Bible:
   def __init__(self, arg, nom):
     self.btable = arg
     self.bname  = nom
+    self.tempt  = env.get_template('index.html')
 
   @cherrypy.expose
   def index(self, *args, **kw):
     psg = Passage(self.btable, *args, **kw)
-    return env.get_template('index.html').render({
+    return self.tempt.render({
       'passage'   : psg,
       'appname'   : self.bname,
       'book'      : psg.book,
