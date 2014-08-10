@@ -4,6 +4,7 @@ $f0:   "Cinzel Decorative";
 $f1:            /*"Liberation Serif", "PT Sans", "Quattrocento Roman", "Alegreya", */"Goudy Bookletter 1911", serif;
 $f2:            "Alegreya Sans SC", "Varela Round";
 $f3:            "Lato", "Varela Round";
+$f4:            "Alegreya Sans";
 $grlargepc:     61.8%;
 $grsmallpc:     100.0% - $grlargepc;
 $colour_black:  rgb(10, 6, 6);
@@ -25,6 +26,7 @@ body
 {
   font-family: $f1;
   font-size: 15pt;
+  font-weight: 100;
   font-variant-settings: "dlig", "diag";
   background: $mainbg;
   color: $colour_black;
@@ -73,9 +75,9 @@ body
         }
       }
 
-      #selectors
+      #selector
       {
-        content: "";
+        display: none;
         margin-top: 7em;
         float: right;
         font-size: 10.5pt;
@@ -195,24 +197,37 @@ body
 
         #chapnav
         {
-          font-family: $f2;
+          font-family: $f3;
           //  margin-bottom: 0.5em;
-          font-weight: bold;
+          //  font-weight: bold;
+          font-weight: 400;
           font-size: 90%;
-          text-align: left;
+          text-align: justify;
+          text-justify: distribute-all-lines;
           color: $colour_dark;
           line-height: 1em;
 
+          &:after
+          {
+            content: " ";
+            width: 100%;
+            display: inline-block;
+          }
+
           .chap
           {
-            display: inline;
+            display: inline-block;
             //  background: $colour_light;
-            margin-left: 1px;
-            margin-right: 1px;
-            padding-left: 1px;
-            padding-right: 1px;
+            margin: 0px;
+            padding: 0px;
+            margin-left: 0.25em;
+            margin-right: 0.25em;
+            padding-left: 0.25em;
+            padding-right: 0.25em;
             color: $colour_grey;
             text-shadow: 0px 0px 3px $colour_dark;
+            letter-spacing: 0px;
+            font-style: italic;
 
             a
             {
@@ -227,17 +242,16 @@ body
 
           #curchap
           {
+                  /*
             border: none;
             border-bottom: rgba(255, 255, 255, 0.0);
-            //  background: linear-gradient(to bottom, darken($parchment, 50%), $parchment, $parchment, $faded_parchment);
-            //  background: radial-gradient(circle, $parchment, $parchment, $parchment, $colour_grey, $colour_dark);
-            //  background: $faded_parchment;
             box-shadow: 0px 0px 4px $parchment;
+            border-radius: 0.5em 0.5em 0.125em 0.125em;
+            */
             padding-left: 0.25em;
             padding-right: 0.25em;
             text-shadow: none;
             color: $colour_dark;
-            border-radius: 0.5em 0.5em 0.125em 0.125em;
 
             a
             {
@@ -286,20 +300,23 @@ body
 
       .mark
       {
-        font-family: $f2;
+        font-family: $f3;
         font-size: $grlargepc;
         width: 0.5%;
         vertical-align: top;
         //  font-weight: bold;
         font-style: italic;
-        font-size: 8pt;
+        font-size: 7pt;
+        font-weight: 700;
       }
 
       .eng
       {
+        font-family: $f4;
+        //  font-weight: 300;
         width: $grsmallpc - 2%;
         //  font-size: $grlargepc + ($grsmallpc / 2);
-        font-size: 10pt;
+        font-size: 10.5pt;
         line-height: 1em;
       }
     }
@@ -307,7 +324,7 @@ body
     #footer
     {
       text-align: center;
-      font-family: $f2;
+      font-family: $f3;
       font-size: x-small;
     }
   }

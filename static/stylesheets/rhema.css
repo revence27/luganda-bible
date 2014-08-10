@@ -3,6 +3,7 @@
 body {
   font-family: "Goudy Bookletter 1911", serif;
   font-size: 15pt;
+  font-weight: 100;
   font-variant-settings: "dlig", "diag";
   background: radial-gradient(circle, white, #e6e8e7, #e6e8e7, #bfbfbf) fixed center no-repeat;
   color: #0a0606; }
@@ -34,8 +35,8 @@ body {
         padding: 0.25em;
         font-weight: 900;
         text-shadow: 0px 0px 3px #fce2e2; }
-    body #main #header #selectors {
-      content: "";
+    body #main #header #selector {
+      display: none;
       margin-top: 7em;
       float: right;
       font-size: 10.5pt;
@@ -96,33 +97,44 @@ body {
           font-style: italic;
           cursor: pointer; }
       body #main #trunk #info #chapnav {
-        font-family: "Alegreya Sans SC", "Varela Round";
-        font-weight: bold;
+        font-family: "Lato", "Varela Round";
+        font-weight: 400;
         font-size: 90%;
-        text-align: left;
+        text-align: justify;
+        text-justify: distribute-all-lines;
         color: #0a0606;
         line-height: 1em; }
+        body #main #trunk #info #chapnav:after {
+          content: " ";
+          width: 100%;
+          display: inline-block; }
         body #main #trunk #info #chapnav .chap {
-          display: inline;
-          margin-left: 1px;
-          margin-right: 1px;
-          padding-left: 1px;
-          padding-right: 1px;
+          display: inline-block;
+          margin: 0px;
+          padding: 0px;
+          margin-left: 0.25em;
+          margin-right: 0.25em;
+          padding-left: 0.25em;
+          padding-right: 0.25em;
           color: #bfbfbf;
-          text-shadow: 0px 0px 3px #0a0606; }
+          text-shadow: 0px 0px 3px #0a0606;
+          letter-spacing: 0px;
+          font-style: italic; }
           body #main #trunk #info #chapnav .chap a {
             color: #e6e8e7; }
           body #main #trunk #info #chapnav .chap:hover, body #main #trunk #info #chapnav .chap a:hover {
             color: white; }
         body #main #trunk #info #chapnav #curchap {
-          border: none;
-          border-bottom: rgba(255, 255, 255, 0);
-          box-shadow: 0px 0px 4px white;
+      /*
+border: none;
+border-bottom: rgba(255, 255, 255, 0.0);
+box-shadow: 0px 0px 4px $parchment;
+border-radius: 0.5em 0.5em 0.125em 0.125em;
+*/
           padding-left: 0.25em;
           padding-right: 0.25em;
           text-shadow: none;
-          color: #0a0606;
-          border-radius: 0.5em 0.5em 0.125em 0.125em; }
+          color: #0a0606; }
           body #main #trunk #info #chapnav #curchap a {
             color: #0a0606; }
             body #main #trunk #info #chapnav #curchap a:hover, body #main #trunk #info #chapnav #curchap a:visited {
@@ -147,17 +159,19 @@ body {
       width: 61.55%;
       line-height: 1em; }
     body #main #trunk .mark {
-      font-family: "Alegreya Sans SC", "Varela Round";
+      font-family: "Lato", "Varela Round";
       font-size: 61.8%;
       width: 0.5%;
       vertical-align: top;
       font-style: italic;
-      font-size: 8pt; }
+      font-size: 7pt;
+      font-weight: 700; }
     body #main #trunk .eng {
+      font-family: "Alegreya Sans";
       width: 36.2%;
-      font-size: 10pt;
+      font-size: 10.5pt;
       line-height: 1em; }
   body #main #footer {
     text-align: center;
-    font-family: "Alegreya Sans SC", "Varela Round";
+    font-family: "Lato", "Varela Round";
     font-size: x-small; }

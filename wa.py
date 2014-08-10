@@ -2,6 +2,7 @@
 
 import cherrypy
 from ectomorph import orm
+from datetime import datetime
 from jinja2 import Environment, FileSystemLoader as FSL, Template
 import os
 import settings
@@ -11,14 +12,20 @@ env       = Environment(loader  = FSL('templates'))
 pair      = [settings.v1, settings.v2]
 
 class Passage:
-  def __init__(self, btable, *args, **kw):
+  def __init__(self, btable, dbook = 44, dchap = 0, *args, **kw):
     self.args         = args
     self.kw           = kw
     self.btable       = btable
-    self.default_book = 44
+    self.dbook        = dbook
+    self.dchap        = dchap
 
   def query(self):
-    return orm.ORM.query(self.btable, {'chapter = %s':self.chapter, 'book = %s':int(self.book or self.default_book)}, sort = ('position', 'ASC'), hooks = {
+    bk  = self.book
+    cp  = self.chapter
+    return self.book_chapter(bk, cp)
+
+  def book_chapter(self, bk, cp):
+    return orm.ORM.query(self.btable, {'chapter = %s':cp, 'book = %s':bk}, sort = ('position', 'ASC'), hooks = {
         'eng': lambda x, y: (x[pair[0]] or u'').decode('utf-8'),
         'lug': lambda x, y: (x[pair[1]] or u'').decode('utf-8')
       })
@@ -26,7 +33,7 @@ class Passage:
   @property
   def chapter(self):
     chp = self.kw.get('chapter')
-    return int(chp) if chp else 0
+    return self.dchap if chp is None else int(chp)
 
   def books(self, ver, pos):
     dem = []
@@ -40,8 +47,8 @@ class Passage:
 
   @property
   def book(self):
-    bk  = self.kw.get('book', self.default_book)
-    return int(bk) if bk else bk
+    bk  = self.kw.get('book')
+    return self.dbook if bk is None else int(bk)
 
 class Bible:
   def __init__(self, arg, nom):
@@ -51,7 +58,7 @@ class Bible:
 
   @cherrypy.expose
   def index(self, *args, **kw):
-    psg = Passage(self.btable, *args, **kw)
+    psg = Passage(self.btable, dbook = 44, dchap = 0, *args, **kw)
     return self.tempt.render({
       'passage'   : psg,
       'appname'   : self.bname,
