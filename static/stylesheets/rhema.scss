@@ -1,10 +1,10 @@
-@import url(http://fonts.googleapis.com/css?family=Goudy+Bookletter+1911|Alegreya+Sans+SC:100,400|Lato:300,400,700,900,300italic,400italic,700italic,900italic);
+@import url(http://fonts.googleapis.com/css?family=Alegreya+Sans+SC:100,300,400,500,700,800,900,100italic,300italic,400italic,500italic,700italic,800italic,900italic|Lato:100,300,400,700,900,100italic,300italic,400italic,700italic,900italic|Alegreya+Sans:100,300,400,500,700,800,900,100italic,300italic,400italic,500italic,700italic,800italic,900italic|Cinzel+Decorative:400,700,900|Goudy+Bookletter+1911|Varela+Round&subset=latin,latin-ext);
 
-$f0:   "Cinzel Decorative";
-$f1:            /*"Liberation Serif", "PT Sans", "Quattrocento Roman", "Alegreya", */"Goudy Bookletter 1911", serif;
-$f2:            "Alegreya Sans SC", "Varela Round";
-$f3:            "Lato", "Varela Round";
-$f4:            "Alegreya Sans";
+$f0:            "Cinzel Decorative", "Copperplate Gothic", serif;
+$f1:            "Goudy Bookletter 1911", "Garamond", $f0;
+$f2:            "Alegreya Sans SC", "Verdana", sans-serif;
+$f3:            "Lato", $f2;
+$f4:            "Alegreya Sans", $f3;
 $grlargepc:     61.8%;
 $grsmallpc:     100.0% - $grlargepc;
 $colour_black:  rgb(10, 6, 6);
@@ -122,13 +122,14 @@ body
         form
         {
           float: right;
-          font-family: $f2;
+          font-family: $f3;
 
           select
           {
             text-align: center;
             font-size: 9pt;
-            font-family: $f2;
+            font-family: $f3;
+            font-variant: small-caps;
 
             option
             {
@@ -155,6 +156,7 @@ body
           font-weight: 100;
           font-size: 100% + $grsmallpc;
           color: $parchment;
+          font-variant: small-caps; //  TODO: Get a good SC as $f1 instead.
 
           .bn
           {
@@ -201,7 +203,7 @@ body
           //  margin-bottom: 0.5em;
           //  font-weight: bold;
           font-weight: 400;
-          font-size: 90%;
+          font-size: 70%;
           text-align: justify;
           text-justify: distribute-all-lines;
           color: $colour_dark;
@@ -313,7 +315,7 @@ body
       .eng
       {
         font-family: $f4;
-        //  font-weight: 300;
+        font-weight: 400;
         width: $grsmallpc - 2%;
         //  font-size: $grlargepc + ($grsmallpc / 2);
         font-size: 10.5pt;
