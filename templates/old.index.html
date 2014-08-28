@@ -32,7 +32,7 @@
                 <select id="bnav" name="book">
                   {%  for bk in lugbk %}
                     <option{% if bk[2] %} selected="selected"{% endif %} value="{{ bk[0]  }}">{{  bk[1]  }} &mdash; {{  engbk[loop.index - 1][1]}}</option>
-                  {%  endfor  %}
+                  {%  endfor  %tu}
                 </select>
                 <input type="submit" value="Read" />
               </form>
