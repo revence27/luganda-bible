@@ -8,7 +8,8 @@ import settings
 BIBLE_TABLE = [
   ('book',      0),
   ('chapter',   0),
-  ('verse',     0)
+  ('verse',     0),
+  ('searchdoc', {'type':'TSVECTOR', 'null':True})
 ]
 
 BOOK_NAME_TABLE = [
@@ -57,6 +58,7 @@ def lmain(argv):
               thetext = unicode(verse.text)
               dat = {
                 'verse'     : vnm,
+                'searchdoc' : lambda c: c.mogrify(u'TO_TSVECTOR(%s)', (thetext, )),
                 'chapter'   : cnm,
                 'book'      : bnm,
                 'position'  : long(pos),
@@ -70,7 +72,8 @@ def lmain(argv):
                   continue
                 # sys.stderr.write(('\r' + gat.query))
                 dat['indexcol'] = it['indexcol']
-              orm.ORM.store(argv[1], dat, migrations = [(bname, u'')])
+              ix  = orm.ORM.store(argv[1], dat, migrations = [(bname, u'')])
+              # orm.ORM.store(argv[1], {'indexcol':ix, 'searchdoc':lambda _: 'TO_TSVECTOR(verse)'})
           orm.ORM.store('booknames', {'indexcol':bki, 'chapters':chs})
 
 if __name__ == '__main__':

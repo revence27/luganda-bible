@@ -8,7 +8,7 @@ $(() ->
 newerBookNav = () ->
   sel = $('#bnav')
   frm = $(sel.parent('form'))
-  but = $($('input[type="submit"]', frm)[0])
+  but = $($('input[value="Read"]', frm)[0])
   but.hide()
   sel.change((evt) ->
     document.location = "?book=#{$(this).val()}"

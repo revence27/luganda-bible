@@ -1,0 +1,353 @@
+@import url(http://fonts.googleapis.com/css?family=Alegreya+Sans+SC:100,300,400,500,700,800,900,100italic,300italic,400italic,500italic,700italic,800italic,900italic|Lato:100,300,400,700,900,100italic,300italic,400italic,700italic,900italic|Alegreya+Sans:100,300,400,500,700,800,900,100italic,300italic,400italic,500italic,700italic,800italic,900italic|Cinzel+Decorative:400,700,900|Goudy+Bookletter+1911|Varela+Round&subset=latin,latin-ext);
+
+$f0:            "Cinzel Decorative", "Copperplate Gothic", serif;
+$f1:            "Goudy Bookletter 1911", "Garamond", $f0;
+$f2:            "Alegreya Sans SC", "Verdana", sans-serif;
+$f3:            "Lato", $f2;
+$f4:            "Alegreya Sans", $f3;
+$grlargepc:     61.8%;
+$grsmallpc:     100.0% - $grlargepc;
+$colour_black:  rgb(10, 6, 6);
+$colour_dark:   $colour_black;//  rgb(255, 0, 0);
+$colour_light:  rgb(230, 232, 231);
+$faded_colour_light:  rgb(230, 232, 231);
+$bare_display: rgba(230, 232, 231, 0.7);
+$colour_pink:   lighten($colour_dark, 75%);
+$colour_grey:   lighten(rgb(0, 0, 0), 75%);
+$info_colour:   $colour_pink;
+$info_colour:   darken($colour_grey, 15%);
+$rhemared:      rgb(203, 23, 20);
+$parchment:     lighten($colour_light, 10%);
+$faded_parchment:     lighten($faded_colour_light, 10%);
+$bare_parchment:  lighten($bare_display, 10%);
+$mainbg:  radial-gradient(circle, $parchment, $colour_light, $colour_light, $colour_grey) fixed center no-repeat;
+
+body
+{
+  font-family: $f1;
+  font-size: 15pt;
+  font-weight: 100;
+  font-variant-settings: "dlig", "diag";
+  background: $mainbg;
+  color: $colour_black;
+
+  #main
+  {
+    a
+    {
+      text-decoration: inherit;
+      color: inherit;
+
+      &:hover, &:visited
+      {
+        color: inherit;
+      }
+    }
+
+    #header
+    {
+      margin-bottom: 1em;
+
+      #nom
+      {
+        float: left;
+        color: $parchment;
+        background: $colour_grey;
+        border: solid 1px $rhemared;
+        font-weight: 300;
+        box-shadow: 3px 3px 10px 3px $parchment;
+        font-size: 20pt;
+        margin: 0.125em;
+        margin-left: 1em;
+        padding: 0.5em;
+        font-family: $f0;
+        padding-top: 0.25em;
+        padding-bottom: 0.25em;
+        border-radius: 0.25em 0.25em 0.25em 0.25em;
+
+        &:before
+        {
+          content: "✝";
+          color: $rhemared;
+          padding: 0.25em;
+          font-weight: 900;
+          text-shadow: 0px 0px 3px lighten($rhemared, 50%);
+        }
+      }
+
+      #selector
+      {
+        display: none;
+        margin-top: 7em;
+        float: right;
+        font-size: 10.5pt;
+        background: $bare_parchment;
+        width: ($grsmallpc / 2) - 5%;
+        font-family: $f3;
+        font-weight: 400;
+        letter-spacing: 1px;
+        text-align: right;
+        padding-right: 1%;
+        margin-right: 0.5%;
+        border: $parchment solid 2px;
+        border-radius: 3px 3px 3px 3px;
+      }
+    }
+
+    #front
+    {
+
+    }
+
+    #trunk
+    {
+      margin: 1em;
+      //  border: solid 1px $colour_grey;
+      width: $grlargepc;
+      margin-left: $grsmallpc / 2.0;
+      background: $parchment;
+      padding-bottom: 0.5em;
+
+      #info
+      {
+        border-radius: 3px 3px 0px 0px;
+        padding: 2em;
+        padding-top: 0.5em;
+        padding-bottom: 0.5em;
+        //  background: linear-gradient(to top, $info_colour, $info_colour, $info_colour, $colour_light);
+        border-top: solid $colour_light 1px;
+        margin-bottom: 1em;
+        box-shadow: 0px 1px 2px $colour_dark;
+        text-align: justify;
+        text-justify: distribute-all-lines;
+
+        #navboxen
+        {
+          text-align: justify;
+          text-justify: distribute-all-lines;
+
+          form
+          {
+            display: inline-block;
+          }
+
+          &:after
+          {
+            content: " ";
+            width: 100%;
+            display: inline-block;
+          }
+        }
+
+        #showboxen
+        {
+          text-align: justify;
+          text-justify: distribute-all-lines;
+
+          &:after
+          {
+            content: " ";
+            width: 100%;
+            display: inline-block;
+          }
+
+          #curbook
+          {
+            line-height: 1em;
+            font-weight: 100;
+            font-size: 200% + ($grsmallpc * 2);
+            //  color: $parchment;
+            color: $mainbg;
+            font-variant: small-caps; //  TODO: Get a good SC as $f1 instead.
+            display: inline-block;
+            width: 45%;
+            vertical-align: top;
+
+            .bn
+            {
+              //  text-decoration: underline;
+              //  cursor: pointer;
+              //  margin-right: 0.5em;
+
+              &:hover
+              {
+                //  color: $colour_dark;
+              }
+            }
+
+            .bn2
+            {
+              display: block;
+              //  margin-top: 1em;
+              //  float: left;
+              //  margin-left: 0.75em;
+              vertical-align: top;
+              line-height: 0.75em;
+              margin-top: 0px;
+              font-weight: 300;
+              margin-bottom: 0.125em;
+              font-size: $grlargepc;
+              font-family: $f2;
+              color: darken($colour_grey, 60%);
+              text-shadow: -1px 1px 2px darken($colour_grey, 70%);
+              letter-spacing: 0.125em;
+            }
+
+            .cn
+            {
+              font-style: italic;
+              //  text-decoration: underline;
+              cursor: pointer;
+              //  margin-left: 0.5em;
+            }
+          }
+
+          #chapnav
+          {
+            font-family: $f3;
+            //  margin-bottom: 0.5em;
+            //  font-weight: bold;
+            font-weight: 400;
+            text-align: justify;
+            text-justify: distribute-all-lines;
+            //  color: $colour_dark;
+            line-height: 1em;
+            display: inline-block;
+            width: 50%;
+
+            &:after
+            {
+              content: " ";
+              width: 100%;
+              display: inline-block;
+            }
+
+            .chap
+            {
+              display: inline-block;
+              //  background: $colour_light;
+              margin: 0px;
+              padding: 0px;
+              margin-left: 0.25em;
+              margin-right: 0.25em;
+              padding-left: 0.25em;
+              padding-right: 0.25em;
+              //  color: $colour_grey;
+              //  text-shadow: 0px 0px 3px $colour_dark;
+              letter-spacing: 0px;
+              font-style: italic;
+
+              a
+              {
+                //  color: $colour_light;
+              }
+
+              &:hover, a:hover
+              {
+                //  color: $parchment;
+                color: $colour_grey;
+              }
+            }
+
+            #curchap
+            {
+                  /*
+              border: none;
+              border-bottom: rgba(255, 255, 255, 0.0);
+              box-shadow: 0px 0px 4px $parchment;
+              border-radius: 0.5em 0.5em 0.125em 0.125em;
+              */
+              padding-left: 0.25em;
+              padding-right: 0.25em;
+              text-shadow: none;
+              color: $colour_grey;
+
+              a
+              {
+                //  color: $colour_dark;
+
+                &:visited
+                {
+                  color: inherit;
+                }
+
+                &:hover
+                {
+                  color: $colour_dark;
+                }
+              }
+            }
+          }
+        }
+
+        &:after
+        {
+          content: " ";
+          width: 100%;
+          display: inline-block;
+        }
+      }
+
+      table
+      {
+        margin: 2em;
+        margin-top: 0.125em;
+        margin-left: 1em;
+        margin-right: 1em;
+        margin-bottom: 0em;
+        font: inherit;
+        border-collapse: collapse;
+      }
+
+      .verse
+      {
+        vertical-align: top;
+        padding-left: 1em;
+        padding-right: 1em;
+        //  font-size: 100% - ($grsmallpc / 2);
+        font-size: 13pt;
+
+        .wrap
+        {
+          text-align: justify;
+          text-indent: 1em;
+        }
+      }
+
+      .lug
+      {
+        width: $grlargepc - 0.25%;
+        line-height: 1em;
+      }
+
+      .mark
+      {
+        font-family: $f3;
+        font-size: $grlargepc;
+        width: 0.5%;
+        vertical-align: top;
+        //  font-weight: bold;
+        font-style: italic;
+        font-size: 7pt;
+        font-weight: 700;
+      }
+
+      .eng
+      {
+        font-family: $f4;
+        font-weight: 400;
+        width: $grsmallpc - 2%;
+        //  font-size: $grlargepc + ($grsmallpc / 2);
+        font-size: 10.5pt;
+        line-height: 1em;
+      }
+    }
+
+    #footer
+    {
+      text-align: center;
+      font-family: $f3;
+      font-size: x-small;
+    }
+  }
+}

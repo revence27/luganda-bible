@@ -10,7 +10,7 @@ newerBookNav = function() {
   var but, frm, sel;
   sel = $('#bnav');
   frm = $(sel.parent('form'));
-  but = $($('input[type="submit"]', frm)[0]);
+  but = $($('input[value="Read"]', frm)[0]);
   but.hide();
   return sel.change(function(evt) {
     return document.location = "?book=" + ($(this).val());

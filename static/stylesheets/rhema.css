@@ -1,180 +1,149 @@
-@charset "UTF-8";
-@import url(http://fonts.googleapis.com/css?family=Alegreya+Sans+SC:100,300,400,500,700,800,900,100italic,300italic,400italic,500italic,700italic,800italic,900italic|Lato:100,300,400,700,900,100italic,300italic,400italic,700italic,900italic|Alegreya+Sans:100,300,400,500,700,800,900,100italic,300italic,400italic,500italic,700italic,800italic,900italic|Cinzel+Decorative:400,700,900|Goudy+Bookletter+1911|Varela+Round&subset=latin,latin-ext);
+@import url(http://fonts.googleapis.com/css?family=Righteous|Playfair+Display:400,700,900,400italic,700italic,900italic|Merriweather+Sans:400,300,300italic,400italic,700,700italic,800,800italic|Merriweather:400,300,300italic,400italic,700,700italic,900,900italic&subset=latin,latin-ext);
+* {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box; }
+
 body {
-  font-family: "Goudy Bookletter 1911", "Garamond", "Cinzel Decorative", "Copperplate Gothic", serif;
-  font-size: 15pt;
-  font-weight: 100;
-  font-variant-settings: "dlig", "diag";
-  background: radial-gradient(circle, white, #e6e8e7, #e6e8e7, #bfbfbf) fixed center no-repeat;
-  color: #0a0606; }
-  body #main a {
-    text-decoration: inherit;
-    color: inherit; }
-    body #main a:hover, body #main a:visited {
-      color: inherit; }
-  body #main #header {
-    margin-bottom: 1em; }
-    body #main #header #nom {
-      float: left;
-      color: white;
-      background: #bfbfbf;
-      border: solid 1px #cb1714;
-      font-weight: 300;
-      box-shadow: 3px 3px 10px 3px white;
-      font-size: 20pt;
-      margin: 0.125em;
-      margin-left: 1em;
-      padding: 0.5em;
-      font-family: "Cinzel Decorative", "Copperplate Gothic", serif;
-      padding-top: 0.25em;
-      padding-bottom: 0.25em;
-      border-radius: 0.25em 0.25em 0.25em 0.25em; }
-      body #main #header #nom:before {
-        content: "✝";
-        color: #cb1714;
-        padding: 0.25em;
-        font-weight: 900;
-        text-shadow: 0px 0px 3px #fce2e2; }
-    body #main #header #selector {
-      display: none;
-      margin-top: 7em;
-      float: right;
-      font-size: 10.5pt;
-      background: rgba(255, 255, 255, 0.7);
-      width: 14.1%;
-      font-family: "Lato", "Alegreya Sans SC", "Verdana", sans-serif;
-      font-weight: 400;
-      letter-spacing: 1px;
-      text-align: right;
-      padding-right: 1%;
-      margin-right: 0.5%;
-      border: white solid 2px;
-      border-radius: 3px 3px 3px 3px; }
-  body #main #trunk {
-    margin: 1em;
-    width: 61.8%;
-    margin-left: 19.1%;
-    background: white;
-    padding-bottom: 0.5em; }
-    body #main #trunk #info {
-      border-radius: 3px 3px 0px 0px;
-      padding: 2em;
-      padding-top: 0.5em;
-      padding-bottom: 0.5em;
-      background: linear-gradient(to top, #999999, #999999, #999999, #e6e8e7);
-      border-top: solid #e6e8e7 1px;
-      margin-bottom: 1em;
-      box-shadow: 0px 1px 2px #0a0606; }
-      body #main #trunk #info form {
-        float: right;
-        font-family: "Lato", "Alegreya Sans SC", "Verdana", sans-serif; }
-        body #main #trunk #info form select {
-          text-align: center;
-          font-size: 9pt;
-          font-family: "Lato", "Alegreya Sans SC", "Verdana", sans-serif;
-          font-variant: small-caps; }
-        body #main #trunk #info form input {
-          font-family: "Alegreya Sans SC", "Verdana", sans-serif; }
-      body #main #trunk #info:before {
-        color: #0a0606; }
-      body #main #trunk #info #curbook {
-        line-height: 1em;
-        font-weight: 100;
-        font-size: 138.2%;
+  font-family: "Merriweather Sans", sans-serif;
+  color: #141414;
+  font-variant-settings: "dlig", "dnum", "kern", "liga", "pnum";
+  background: #c8c8c8; }
+  body #main {
+    max-width: 68em;
+    margin-left: auto;
+    margin-right: auto; }
+    body #main:after {
+      content: "";
+      display: table;
+      clear: both; }
+    body #main #topstrip {
+      text-align: justify;
+      text-justify: distribute-all-lines; }
+      body #main #topstrip form, body #main #topstrip div {
+        display: inline-block; }
+      body #main #topstrip:after {
+        width: 100%;
+        content: " ";
+        display: inline-block; }
+      body #main #topstrip .logo {
         color: white;
-        font-variant: small-caps; }
-        body #main #trunk #info #curbook .bn2 {
-          display: block;
-          vertical-align: top;
-          line-height: 0.75em;
-          margin-top: 0px;
-          font-weight: 300;
-          margin-bottom: 0.125em;
-          font-size: 61.8%;
-          font-family: "Alegreya Sans SC", "Verdana", sans-serif;
-          color: #262626;
-          text-shadow: -1px 1px 2px #0d0d0d;
-          letter-spacing: 0.125em; }
-        body #main #trunk #info #curbook .cn {
-          font-style: italic;
-          cursor: pointer; }
-      body #main #trunk #info #chapnav {
-        font-family: "Lato", "Alegreya Sans SC", "Verdana", sans-serif;
-        font-weight: 400;
-        font-size: 70%;
-        text-align: justify;
+        font-family: "Righteous", "Playfair Display", "Merriweather", serif;
+        font-size: 15pt;
+        text-shadow: 1px 1px 2px #606060; }
+        body #main #topstrip .logo a, body #main #topstrip .logo a:hover {
+          color: inherit;
+          text-decoration: inherit;
+          font: inherit; }
+    body #main #navstrip {
+      float: left;
+      display: block;
+      margin-right: 2.35765%;
+      width: 65.88078%;
+      margin-left: 17.05961%;
+      background: -webkit-radial-gradient(circle, white, #fbfbfb, #c8c8c8);
+      background: radial-gradient(circle, white, #fbfbfb, #c8c8c8);
+      border: solid 2px #fbfbfb;
+      font-family: "Playfair Display", "Merriweather", serif;
+      padding: 1em; }
+      body #main #navstrip:last-child {
+        margin-right: 0; }
+      body #main #navstrip .bnames {
+        float: left;
+        display: block;
+        margin-right: 3.57866%;
+        width: 48.21067%;
+        text-align: right;
         text-justify: distribute-all-lines;
-        color: #0a0606;
-        line-height: 1em; }
-        body #main #trunk #info #chapnav:after {
-          content: " ";
-          width: 100%;
-          display: inline-block; }
-        body #main #trunk #info #chapnav .chap {
-          display: inline-block;
-          margin: 0px;
-          padding: 0px;
-          margin-left: 0.25em;
-          margin-right: 0.25em;
-          padding-left: 0.25em;
-          padding-right: 0.25em;
-          color: #bfbfbf;
-          text-shadow: 0px 0px 3px #0a0606;
-          letter-spacing: 0px;
+        font-style: italic;
+        font-size: 120%;
+        text-shadow: -1px -1px 3px #606060; }
+        body #main #navstrip .bnames:last-child {
+          margin-right: 0; }
+        body #main #navstrip .bnames .bn1 {
+          font-size: 150%;
+          line-height: 0.8em; }
+      body #main #navstrip .chaps {
+        float: left;
+        display: block;
+        margin-right: 3.57866%;
+        width: 48.21067%;
+        background: -webkit-radial-gradient(circle, white, #fbfbfb);
+        background: radial-gradient(circle, white, #fbfbfb); }
+        body #main #navstrip .chaps:last-child {
+          margin-right: 0; }
+        body #main #navstrip .chaps .cn {
+          float: left;
+          display: block;
+          margin-right: 7.42297%;
+          width: 19.43277%;
+          font-size: 400%;
           font-style: italic; }
-          body #main #trunk #info #chapnav .chap a {
-            color: #e6e8e7; }
-          body #main #trunk #info #chapnav .chap:hover, body #main #trunk #info #chapnav .chap a:hover {
-            color: white; }
-        body #main #trunk #info #chapnav #curchap {
-      /*
-border: none;
-border-bottom: rgba(255, 255, 255, 0.0);
-box-shadow: 0px 0px 4px $parchment;
-border-radius: 0.5em 0.5em 0.125em 0.125em;
-*/
-          padding-left: 0.25em;
-          padding-right: 0.25em;
-          text-shadow: none;
-          color: #0a0606; }
-          body #main #trunk #info #chapnav #curchap a {
-            color: #0a0606; }
-            body #main #trunk #info #chapnav #curchap a:hover, body #main #trunk #info #chapnav #curchap a:visited {
-              color: #0a0606; }
-    body #main #trunk table {
-      margin: 2em;
-      margin-top: 0.125em;
-      margin-left: 1em;
-      margin-right: 1em;
-      margin-bottom: 0em;
-      font: inherit;
-      border-collapse: collapse; }
-    body #main #trunk .verse {
-      vertical-align: top;
-      padding-left: 1em;
-      padding-right: 1em;
-      font-size: 13pt; }
-      body #main #trunk .verse .wrap {
-        text-align: justify;
-        text-indent: 1em; }
-    body #main #trunk .lug {
-      width: 61.55%;
-      line-height: 1em; }
-    body #main #trunk .mark {
-      font-family: "Lato", "Alegreya Sans SC", "Verdana", sans-serif;
-      font-size: 61.8%;
-      width: 0.5%;
-      vertical-align: top;
-      font-style: italic;
-      font-size: 7pt;
-      font-weight: 700; }
-    body #main #trunk .eng {
-      font-family: "Alegreya Sans", "Lato", "Alegreya Sans SC", "Verdana", sans-serif;
-      font-weight: 400;
-      width: 36.2%;
-      font-size: 10.5pt;
-      line-height: 1em; }
-  body #main #footer {
-    text-align: center;
-    font-family: "Lato", "Alegreya Sans SC", "Verdana", sans-serif;
-    font-size: x-small; }
+          body #main #navstrip .chaps .cn:last-child {
+            margin-right: 0; }
+        body #main #navstrip .chaps .cnetc {
+          float: left;
+          display: block;
+          margin-right: 7.42297%;
+          width: 73.14426%;
+          font-size: 120%; }
+          body #main #navstrip .chaps .cnetc:last-child {
+            margin-right: 0; }
+          body #main #navstrip .chaps .cnetc ul {
+            list-style: none;
+            display: inline-block;
+            margin: 0px;
+            padding: 0px; }
+            body #main #navstrip .chaps .cnetc ul li {
+              list-style: none;
+              display: inline-block;
+              margin: 2px;
+              padding: 0px; }
+              body #main #navstrip .chaps .cnetc ul li a, body #main #navstrip .chaps .cnetc ul li a:hover {
+                color: inherit;
+                text-decoration: none; }
+    body #main #lection {
+      float: left;
+      display: block;
+      margin-right: 2.35765%;
+      width: 100%;
+      background: white;
+      margin: 2px;
+      padding: 0.75em;
+      margin-top: 1.5em;
+      border: solid 1px #606060;
+      border-radius: 2px 2px 2px 2px; }
+      body #main #lection:last-child {
+        margin-right: 0; }
+      body #main #lection .verse {
+        float: left;
+        display: block;
+        margin-right: 2.35765%;
+        width: 100%; }
+        body #main #lection .verse:last-child {
+          margin-right: 0; }
+        body #main #lection .verse .vn {
+          font-style: italic;
+          float: left;
+          position: absolute;
+          font-size: 8pt; }
+        body #main #lection .verse .verse1 {
+          float: left;
+          display: block;
+          margin-right: 2.35765%;
+          width: 65.88078%;
+          font-size: 14pt;
+          padding-left: 1em;
+          font-family: "Merriweather", serif; }
+          body #main #lection .verse .verse1:last-child {
+            margin-right: 0; }
+        body #main #lection .verse .verse2 {
+          float: left;
+          display: block;
+          margin-right: 2.35765%;
+          width: 31.76157%;
+          font-size: 10pt; }
+          body #main #lection .verse .verse2:last-child {
+            margin-right: 0; }
+        body #main #lection .verse .verse1, body #main #lection .verse .verse2 {
+          text-align: justify; }

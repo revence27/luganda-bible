@@ -59,9 +59,12 @@ class Bible:
   @cherrypy.expose
   def index(self, *args, **kw):
     psg = Passage(self.btable, dbook = 44, dchap = 0, *args, **kw)
+    if os.getenv('BIBLE_DEBUG'):
+      self.tempt  = env.get_template('index.html')
     return self.tempt.render({
       'passage'   : psg,
       'appname'   : self.bname,
+      'q'         : kw.get('q', ''),
       'book'      : psg.book,
       'chapter'   : psg.chapter,
       'verses'    : psg.query(),
