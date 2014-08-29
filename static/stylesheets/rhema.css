@@ -6,6 +6,7 @@
 
 body {
   font-family: "Merriweather Sans", sans-serif;
+  font-weight: 100;
   color: #141414;
   font-variant-settings: "dlig", "dnum", "kern", "liga", "pnum";
   background: #c8c8c8; }
@@ -22,6 +23,127 @@ body {
       text-justify: distribute-all-lines; }
       body #main #topstrip form, body #main #topstrip div {
         display: inline-block; }
+        body #main #topstrip form select, body #main #topstrip div select {
+          border: 1px solid #090909;
+          border-radius: 3px;
+          box-shadow: inset 0 1px 0 0 #535353;
+          color: white;
+          display: inline-block;
+          font-size: inherit;
+          font-weight: bold;
+          background-color: #2d2d2d;
+          background-image: -webkit-linear-gradient(#2d2d2d, #111111);
+          background-image: linear-gradient(#2d2d2d, #111111);
+          padding: 7px 18px;
+          text-decoration: none;
+          text-shadow: 0 1px 0 black;
+          background-clip: padding-box;
+          border: 1px solid #0a0808;
+          border-radius: 3px;
+          box-shadow: inset 0 1px 0 0 #535353;
+          color: white;
+          display: inline-block;
+          font-size: inherit;
+          font-weight: bold;
+          background-color: #2d2d2d;
+          background-image: -webkit-linear-gradient(#2d2d2d, #120f0f);
+          background-image: linear-gradient(#2d2d2d, #120f0f);
+          padding: 7px 18px;
+          text-decoration: none;
+          text-shadow: 0 1px 0 black;
+          background-clip: padding-box;
+          font-size: 75%; }
+          body #main #topstrip form select:hover:not(:disabled), body #main #topstrip div select:hover:not(:disabled) {
+            box-shadow: inset 0 1px 0 0 #3a3a3a;
+            cursor: pointer;
+            background-color: #202020;
+            background-image: -webkit-linear-gradient(#202020, #090909);
+            background-image: linear-gradient(#202020, #090909); }
+          body #main #topstrip form select:active:not(:disabled), body #main #topstrip form select:focus:not(:disabled), body #main #topstrip div select:active:not(:disabled), body #main #topstrip div select:focus:not(:disabled) {
+            border: 1px solid #090909;
+            box-shadow: inset 0 0 8px 4px #020202, inset 0 0 8px 4px #020202; }
+          body #main #topstrip form select:hover:not(:disabled), body #main #topstrip div select:hover:not(:disabled) {
+            box-shadow: inset 0 1px 0 0 #3a3a3a;
+            cursor: pointer;
+            background-color: #202020;
+            background-image: -webkit-linear-gradient(#202020, #0a0909);
+            background-image: linear-gradient(#202020, #0a0909); }
+          body #main #topstrip form select:active:not(:disabled), body #main #topstrip form select:focus:not(:disabled), body #main #topstrip div select:active:not(:disabled), body #main #topstrip div select:focus:not(:disabled) {
+            border: 1px solid #0a0808;
+            box-shadow: inset 0 0 8px 4px #020202, inset 0 0 8px 4px #020202; }
+          body #main #topstrip form select:disabled, body #main #topstrip div select:disabled {
+            opacity: 0.5;
+            cursor: not-allowed; }
+        body #main #topstrip form input, body #main #topstrip div input {
+          border: 1px solid black;
+          border-color: black black black;
+          border-radius: 16px;
+          box-shadow: inset 0 1px 0 0 #252525;
+          color: white;
+          display: inline-block;
+          font-size: inherit;
+          font-weight: normal;
+          line-height: 1;
+          background-color: #141414;
+          background-image: -webkit-linear-gradient(#141414, black);
+          background-image: linear-gradient(#141414, black);
+          padding: 7px 18px;
+          text-align: center;
+          text-decoration: none;
+          text-shadow: 0 -1px 1px black;
+          background-clip: padding-box;
+          border: 1px solid black;
+          border-color: black black black;
+          border-radius: 16px;
+          box-shadow: inset 0 1px 0 0 #252525;
+          color: white;
+          display: inline-block;
+          font-size: inherit;
+          font-weight: normal;
+          line-height: 1;
+          background-color: #141414;
+          background-image: -webkit-linear-gradient(#141414, black);
+          background-image: linear-gradient(#141414, black);
+          padding: 7px 18px;
+          text-align: center;
+          text-decoration: none;
+          text-shadow: 0 -1px 1px black;
+          background-clip: padding-box; }
+          body #main #topstrip form input:hover:not(:disabled), body #main #topstrip div input:hover:not(:disabled) {
+            border: 1px solid black;
+            border-color: black black black;
+            box-shadow: inset 0 1px 0 0 #1b1b1b;
+            cursor: pointer;
+            background-color: #080808;
+            background-image: -webkit-linear-gradient(#080808, black);
+            background-image: linear-gradient(#080808, black);
+            text-shadow: 0 -1px 1px black;
+            background-clip: padding-box; }
+          body #main #topstrip form input:active:not(:disabled), body #main #topstrip form input:focus:not(:disabled), body #main #topstrip div input:active:not(:disabled), body #main #topstrip div input:focus:not(:disabled) {
+            background: black;
+            border: 1px solid black;
+            border-bottom: 1px solid black;
+            box-shadow: inset 0 0 6px 3px black;
+            text-shadow: 0 -1px 1px black; }
+          body #main #topstrip form input:hover:not(:disabled), body #main #topstrip div input:hover:not(:disabled) {
+            border: 1px solid black;
+            border-color: black black black;
+            box-shadow: inset 0 1px 0 0 #1b1b1b;
+            cursor: pointer;
+            background-color: #080808;
+            background-image: -webkit-linear-gradient(#080808, black);
+            background-image: linear-gradient(#080808, black);
+            text-shadow: 0 -1px 1px black;
+            background-clip: padding-box; }
+          body #main #topstrip form input:active:not(:disabled), body #main #topstrip form input:focus:not(:disabled), body #main #topstrip div input:active:not(:disabled), body #main #topstrip div input:focus:not(:disabled) {
+            background: black;
+            border: 1px solid black;
+            border-bottom: 1px solid black;
+            box-shadow: inset 0 0 6px 3px black;
+            text-shadow: 0 -1px 1px black; }
+          body #main #topstrip form input:disabled, body #main #topstrip div input:disabled {
+            opacity: 0.5;
+            cursor: not-allowed; }
       body #main #topstrip:after {
         width: 100%;
         content: " ";
@@ -111,6 +233,8 @@ body {
       margin: 2px;
       padding: 0.75em;
       margin-top: 1.5em;
+      padding-top: 3em;
+      padding-bottom: 3em;
       border: solid 1px #606060;
       border-radius: 2px 2px 2px 2px; }
       body #main #lection:last-child {
