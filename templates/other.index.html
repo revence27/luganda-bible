@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    {%  set engbk = passage.books(versions[0], book) %}
+    {%  set lugbk = passage.books(versions[1], book) %}
+    {%  set thech = chapter + 1 %}
+    <title>{{  lugbk[book][1] }} • {{  thech }} • {{ engbk[book][1] }}</title>  
+    <link rel="stylesheet" href="//ajax.googleapis.com/ajax/libs/jqueryui/1.11.0/themes/smoothness/jquery-ui.css" />
+    <link rel="stylesheet" href="/static/stylesheets/rhema.css" />
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  </head>
+  <body>
+    <div id="main">
+      <nav id="topstrip">
+        <div class="logo"><a href="/">Rhema</a></div>
+        <ul class="parts">
+          <li>Bible</li>
+          <li>Creeds</li>
+          <li>Catechisms</li>
+          <li>Articles</li>
+        </ul>
+        <div class="book">
+          <form>
+            <select id="bnav" name="book">
+              {%  for bk in lugbk %}
+                <option{% if bk[2] %} selected="selected"{% endif %} value="{{ bk[0]  }}">{{  bk[1]  }} &mdash; {{  engbk[loop.index - 1][1]}}</option>
+              {%  endfor  %}
+            </select>
+            <input type="submit" value="Read" />
+          </form>
+        </div>
+      </nav>
+      <nav id="navstrip">
+        <div class="bnames">
+          <div class="bn1">{{  lugbk[book][1] }}</div>
+          <div class="bn2">{{ engbk[book][1] }}</div>
+        </div>
+        <div class="chaps">
+          <div class="cn">{{  thech }}</div>
+          <div class="cnetc">
+            <ul>
+            {%  for ch  in  passage.chapters(versions[0], book)  %}
+              <li{% if ch == chapter  %} class="current"{%  endif %}><a href="?book={{ book  }}&chapter={{  ch  }}">{{  ch + 1  }}</a></li>
+            {%  endfor  %}
+            </ul>
+          </div>
+        </div>
+      </nav>
+      <article id="lection">
+      {%  for verse in verses.list()  %}
+        <div class="verse">
+          <div class="verse1">
+            {{  verse['lug']  }}
+          </div>
+          <div class="vn">{{  verse['verse'] + 1 }}</div>
+          <div class="verse2">
+            {{  verse['eng']  }}
+          </div>
+        </div>
+      {%  endfor  %}
+      </article>
+    </div>
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.11.0/jquery-ui.min.js"></script>
+    <script type="text/javascript">{{ jsdata  }}</script>
+    <script src="/static/javascripts/rhema.js"></script>
+  </body>
+</html>

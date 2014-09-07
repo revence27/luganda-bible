@@ -7,12 +7,24 @@
     <title>{{  lugbk[book][1] }} • {{  thech }} • {{ engbk[book][1] }}</title>  
     <link rel="stylesheet" href="//ajax.googleapis.com/ajax/libs/jqueryui/1.11.0/themes/smoothness/jquery-ui.css" />
     <link rel="stylesheet" href="/static/stylesheets/rhema.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
   </head>
   <body>
     <div id="main">
       <nav id="topstrip">
         <div class="logo"><a href="/">Rhema</a></div>
+        <ul class="parts">
+          <li>Bible</li>
+          <li>Lectionary</li>
+          <li>Creeds</li>
+          <li>Catechisms</li>
+          <li>Articles</li>
+          <li>Prayers</li>
+          <li>Hymnody</li>
+        </ul>
+      </nav>
+      <nav id="navstrip">
         <div class="book">
           <form>
             <select id="bnav" name="book">
@@ -23,35 +35,38 @@
             <input type="submit" value="Read" />
           </form>
         </div>
-      </nav>
-      <nav id="navstrip">
-        <div class="bnames">
-          <div class="bn1">{{  lugbk[book][1] }}</div>
-          <div class="bn2">{{ engbk[book][1] }}</div>
-        </div>
         <div class="chaps">
-          <div class="cn">{{  thech }}</div>
+          {#  <div class="cn">{{  thech }}</div>  #}
           <div class="cnetc">
             <ul>
             {%  for ch  in  passage.chapters(versions[0], book)  %}
-              <li><a href="?book={{ book  }}&chapter={{  ch  }}">{{  ch + 1  }}</a></li>
+              <li{% if ch == chapter  %} class="current"{%  endif %}><a href="?book={{ book  }}&chapter={{  ch  }}">{{  ch + 1  }}</a></li>
             {%  endfor  %}
             </ul>
           </div>
         </div>
       </nav>
       <article id="lection">
-      {%  for verse in verses.list()  %}
-        <div class="verse">
-          <div class="verse1">
-            {{  verse['lug']  }}
-          </div>
-          <div class="vn">{{  verse['verse'] + 1 }}</div>
-          <div class="verse2">
-            {{  verse['eng']  }}
+        <div class="head">
+          <div class="bnames">
+            <div class="bn1">{{  lugbk[book][1] }}</div>
+            <div class="curchap">{{ thech }}</div>
+            <div class="bn2">{{ engbk[book][1] }}</div>
           </div>
         </div>
-      {%  endfor  %}
+        <div class="copy">
+          {%  for verse in verses.list()  %}
+            <div class="verse">
+              <div class="verse1">
+                <div class="vn">{{  verse['verse'] + 1 }}</div>
+                {{  verse['lug']  }}
+              </div>
+              <div class="verse2">
+                {{  verse['eng']  }}
+              </div>
+            </div>
+          {%  endfor  %}
+        </div>
       </article>
     </div>
     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>

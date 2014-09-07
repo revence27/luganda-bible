@@ -11,9 +11,10 @@ Catch up with the paper Rhema:
   - Helvetic
 - Catechisms
   - Heidelberg
-- Canons
+- Articles
   - Dort
   - Articles of Foundation (or the like)
+  - 39 Articles
 
 - Random
 - Intro
