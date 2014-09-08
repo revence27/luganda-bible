@@ -79,6 +79,7 @@ body
         display: inline-block;
         font-weight: 300;
         font-size: 80%;
+        display: none;
 
         li
         {
@@ -93,6 +94,12 @@ body
       font-weight: 300;
       box-shadow: 0px 0px 3px $shadowcol;
       font-size: 75%;
+
+      @media (max-width: $screen-sm-min)
+      {
+        width: 80%;
+        margin-left: 10%;
+      }
 
       @media (min-width: $screen-sm-min)
       {
